@@ -1,0 +1,120 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSqiggle - Home</title>
+        <!--link rel="icon" type="image/png" href="resources/main icon/min_64.png"-->
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/cascadia-code">
+        <link rel="stylesheet" href="index.css">
+        <script src="Data Files/Projects.js"></script>
+        <script src="ScriptPresenter.js"></script>
+        <script src="CommitsFetcher.js"></script>
+    </head>
+    <body>
+        <!-- background image -->
+        <!-- TODO: replace with cool code loading system -->
+        <!--img src="_Resources/Placeholders/SampleCode.PNG" class="background_sample" /-->
+        <div id="code_container" class="background_sample"></div>
+
+        <!--img src="resources/backdrop.png" class="background_img"/-->
+        <!--sidebar-->
+        <div class="sidebar">
+            <!-- sidebar header-->
+            <div class="side_header">
+                <span>ConnorJT's Portfolio</span>
+                <div class="side_line"></div>
+            </div>
+            <span class="side_context">Self taught Game/Software/Web dev, Modder, Reverse Engineer (RE), 3D Artist, & Certified in Cyber Security</span>
+
+            <!-- sidebar Development tools -->
+            <span class="tool_header">Dev Tools</span>
+            <div class="tool_line"></div>
+            <div id="dev_tools" class="side_tool">
+
+            </div>
+
+            <!-- sidebar Reverse engineering tools -->
+            <span class="tool_header">RE Tools</span>
+            <div class="tool_line"></div>
+            <div id="RE_tools" class="side_tool">
+
+            </div>
+
+            <!-- sidebar languages -->
+            <span class="tool_header">Languages</span>
+            <div class="tool_line"></div>
+            <div id="languages" class="side_tool">
+
+            </div>
+        </div>
+
+        <!-- main content block-->
+        <div class="content">
+            <!-- header bar -->
+            <div class="c_header">
+                <div class="c_h_left">
+                    <span style="color: #9c9c9c;">ct770a@gmail.com</span>
+                    <span style="color: #6a6a6a;"> - </span>
+                    <span style="color: #9c9c9c;" id="repo_text">0 repositiories</span>
+                    <span style="color: #6a6a6a;"> - </span> 
+                    <span style="color: #9c9c9c;" id="opendoc_text">No file open</span>
+                </div>
+                <div class="c_h_right">
+                    <!-- Youtube -->
+                    <svg xmlns="http://www.w3.org/2000/svg" focusable="false" viewBox="0 0 30 20" width="24" height="24">
+                        <path d="M27.9727 3.12324C27.6435 1.89323 26.6768 0.926623 25.4468 0.597366C23.2197 2.24288e-07 14.285 0 14.285 0C14.285 0 5.35042 2.24288e-07 3.12323 0.597366C1.89323 0.926623 0.926623 1.89323 0.597366 3.12324C2.24288e-07 5.35042 0 10 0 10C0 10 2.24288e-07 14.6496 0.597366 16.8768C0.926623 18.1068 1.89323 19.0734 3.12323 19.4026C5.35042 20 14.285 20 14.285 20C14.285 20 23.2197 20 25.4468 19.4026C26.6768 19.0734 27.6435 18.1068 27.9727 16.8768C28.5701 14.6496 28.5701 10 28.5701 10C28.5701 10 28.5677 5.35042 27.9727 3.12324Z" 
+                        fill="white"></path>
+                        <path d="M11.4253 14.2854L18.8477 10.0004L11.4253 5.71533V14.2854Z" 
+                        fill="black"></path>
+                    </svg>
+                    <!-- Github-->
+                    <svg xmlns="http://www.w3.org/2000/svg" focusable="false" viewBox="0 0 16 16" width="24" height="24">
+                        <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"
+                        fill="white"></path>
+                    </svg>
+                    <!-- LinkedIn-->
+                    <svg xmlns="http://www.w3.org/2000/svg" focusable="false" viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"
+                        fill="white"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <div id="focus_presenter" class="c_focused_item_normal c_focused_item_shrink">
+                <div class="c_focused_item" >
+                    <div class="c_i_header">
+                        <span class="c_i_h_name" id="focus_title">test</span>
+                        <span class="c_i_h_date" id="focus_date">2020</span>
+                        <span class="c_i_overview" id="focus_overview">Basic Overview</span>
+                    </div>
+                    <div class="c_i_images">
+                        <div class="c_i_i_trioframe">
+                            <img class="c_i_img_preview" id="focus_img1" src="">
+                        </div>
+                        <div class="c_i_i_trioframe">
+                            <img class="c_i_img_preview" id="focus_img2" src="">
+                        </div>
+                        <div class="c_i_i_trioframe">
+                            <img class="c_i_img_preview" id="focus_img3" src="">
+                        </div>
+                    </div>
+                    <div id="focus_tags"></div>
+                    <div class="c_f_i_d_wrapper">
+                        <div class="c_i_desc c_flexi" id="focus_desc">example text</div>
+                    </div>
+                </div>
+            </div>
+            <!-- content blocks view (auto populated) -->
+            <div style="flex: 1; position: relative; margin-right: 5px;">
+                <div id="projects_list" class="c_flexi">
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </body>
+</html>
