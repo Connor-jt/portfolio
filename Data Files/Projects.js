@@ -3,6 +3,7 @@
 function init(){
     LoadDepends();
     LoadProjects();
+
 }
 var currently_expanded_item = undefined;
 function config_trio_image(ui, src){
@@ -35,6 +36,7 @@ function expand_item(){
     document.getElementById("focus_desc").innerText = project.Desc;
 
     // setup images
+    config_trio_image(document.getElementById("focus_imgF"), project.img1);
     config_trio_image(document.getElementById("focus_img1"), project.img1);
     config_trio_image(document.getElementById("focus_img2"), project.img2);
     config_trio_image(document.getElementById("focus_img3"), project.img3);
@@ -308,5 +310,3 @@ var Projects ={
 }
 
 
-
-window.onload = init;
