@@ -218,13 +218,24 @@ body{
     font-size: 13;
 }
 .c_i_i_trioframe{
-    margin-right: 2px;
+    margin: 0px;
+    padding: 0px;
     display: inline-block;
     box-sizing: border-box;
     width: calc(33% - 5px);
     aspect-ratio: 2 / 1;
     background-color: #101010;
     overflow: hidden;
+    border: none;
+    border-bottom: 2px solid;
+    border-color: #316031;
+    transition: border-color 150ms linear;
+}
+.c_i_i_trioframe:hover{
+    border-color: #709070;
+}
+.c_i_i_trioframe:active{
+    border-color: #90FF90;
 }
 .c_i_i_focusframe{
     margin-right: 2px;
@@ -253,6 +264,8 @@ body{
     transition: background-color 150ms linear;
     border-color: #101010;
     transition: border-color 150ms linear;
+    
+    font-family: 'Courier New', Courier, monospace;
 }
 .c_item:hover {
     background-color: #242424; /*F0;*/
@@ -288,10 +301,10 @@ body{
     font-size: 20px;
 }
 .c_i_h_date{
-    margin-left: 8px;
-    margin-right: 8px;
-    font-size: 12px; 
-    color: orange;
+    margin-left:  6px;
+    margin-right: 6px;
+    font-size: 16px; 
+    color: #40A070;
 }
 .c_i_overview{
     font-size: 16px; 
