@@ -76,6 +76,13 @@ body{
 .spacer{
     height: 400px;
 }
+.tiles_sidebar{
+    position: absolute;
+    right: 0px;
+    top: 38px;
+    width: calc(100% - 800px);
+    height: calc(100% - 25px);
+}
 
 /* ///////// //
 // SIDE BAR //
@@ -92,6 +99,7 @@ body{
 }
 .collapsed_sidebar{
     margin: 5px;
+    padding-bottom: 20px;
     background-color: #101010;
 }
 .side_header{
@@ -159,6 +167,7 @@ body{
     height: fit-content;
 }
 .c_header{
+    position: relative;
     text-align: left;
     left: 0px;
     box-sizing: border-box;
@@ -177,7 +186,7 @@ body{
 .c_h_right{
     position: absolute;
     right: 10px;
-    top: 8px;
+    top: 2px;
 }
 
 /* ///////////// //
@@ -187,11 +196,15 @@ body{
     box-sizing: border-box;
     margin: 5px;
     padding: 5px;
-    width: calc(100% - 10px);
-    background-color: #141414F0;
+    background-color: #141414; /*F0;*/
     border-radius: 5px;
     height: 100%;
-
+}
+.c_focused_item_collapsed{
+    width: 100%;
+}
+.c_focused_item_exand{
+    width: 800px;
 }
 .c_focused_item_normal{
     margin-bottom: 10px;
@@ -204,7 +217,27 @@ body{
 .c_f_i_desc{
     font-size: 13;
 }
+.c_i_i_trioframe{
+    margin-right: 2px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: calc(33% - 5px);
+    aspect-ratio: 2 / 1;
+    background-color: #101010;
+    overflow: hidden;
+}
+.c_i_i_focusframe{
+    margin-right: 2px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: calc(100% - 5px);
+    background-color: #101010;
+    overflow: hidden;
+}
 
+/* ///////////// //
+// TILE CONTENT //
+// /////////// */
 .c_item{
     color: white;
     border: none;
@@ -214,7 +247,7 @@ body{
     display: inline-block;
     margin: 5px;
     padding: 5px;
-    background-color: #141414D0;
+    background-color: #141414; /*D0;*/
     border-radius: 5px;
 
     transition: background-color 150ms linear;
@@ -222,10 +255,13 @@ body{
     transition: border-color 150ms linear;
 }
 .c_item:hover {
-    background-color: #242424F0;
+    background-color: #242424; /*F0;*/
 }
 .c_item:active {
-    background-color: #282828F0;
+    background-color: #282828; /*F0;*/
+}
+.c_item_ipr1{
+    width: calc(100% - 10px);
 }
 .c_item_ipr2{
     width: calc(50% - 10px);
@@ -270,25 +306,6 @@ body{
 .c_i_images{
     display: block; 
     margin-top: 10px;
-}
-.c_i_i_trioframe{
-    margin-right: 2px;
-    display: inline-block;
-    box-sizing: border-box;
-    width: calc(33% - 5px);
-    max-width: 229px;
-    aspect-ratio: 2 / 1;
-    background-color: #101010;
-    overflow: hidden;
-}
-.c_i_i_focusframe{
-    margin-right: 2px;
-    display: inline-block;
-    box-sizing: border-box;
-    width: calc(100% - 5px);
-    max-width: 700px;
-    background-color: #101010;
-    overflow: hidden;
 }
 .c_i_i_wholeframe{
     margin-right: 2px;

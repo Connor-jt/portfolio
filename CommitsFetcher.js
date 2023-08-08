@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     // init this
     fetch_user_details();
-    //setInterval(write_loop_loop, 10);
+    setInterval(write_loop_loop, 10);
     // call the load to repos
     for (let repolink of repo_links)
         load_repos(repolink);
