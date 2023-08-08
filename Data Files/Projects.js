@@ -62,6 +62,29 @@ function minimize_item(item){
     item.removeAttribute("style"); // this will clear the forced selected visual effect
     currently_expanded_item = undefined;
 }
+function select_image1(){
+    select_image("focus_img1", "focus_frame1");
+}
+function select_image2(){
+    select_image("focus_img2", "focus_frame2");
+}
+function select_image3(){
+    select_image("focus_img3", "focus_frame3");
+}
+
+var last_selected_frame = undefined;
+function select_image(image_id, frame){
+    let focus_imgF = document.getElementById("focus_imgF");
+    let new_src = document.getElementById(image_id);
+    let new_frame = document.getElementById(frame);
+
+    focus_imgF.src = new_src.src;
+    if (last_selected_frame != undefined){
+        last_selected_frame.style = "";
+    }
+    last_selected_frame = new_frame;
+    last_selected_frame.style = "border: 1px solid white";
+}
 
 function create_tag(name, colr1, colr2){ // maybe someday we'll beable to use the second color, but it seems its not very possible to use the second color 
     let dep = document.createElement('div');
