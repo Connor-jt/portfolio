@@ -260,7 +260,7 @@ var Projects ={
         img3: "Resources/Examples/JS/JS_3.png",
         deps: ["vs_code","javascript","htmlcss","opengl","peerjs"],
         Desc: 
-`HaloPogSwitch (HPS) 
+`Javasqiggle
 `,
     },
     example3: {
@@ -273,7 +273,7 @@ var Projects ={
         img3: "",
         deps: ["visual_studio","cpp","directx","dear_imgui","csharp","wpf"],
         Desc: 
-`HaloPogSwitch (HPS) 
+`Codename Atriox (CA) 
 `,
     },
 
@@ -333,8 +333,36 @@ var Projects ={
         img3: "Resources/Examples/MG/MG_1.png",
         deps: ["visual_studio","csharp","wpf", "hxd"],
         Desc: 
-`Megalograph  
-`,
+`Megalograph is a fully graphical code compiler & decompiler targeted towards the propriety Megaloscript language. Supporting 3 unqiue variants of the target language.
+To allow this, Megalograph hosts its own unique node-based programming language, which can be called "Megalograph", which can decompile/compile to either 3 Megaloscript variants.
+
+The need for this project arose from the fact that there were no tools that filled its place. (at least until long after its release)
+It filled the place of a compiler for the H2A variant of the Megaloscript language, a language which was previously unknown.
+
+The project began with researching the H2A Megaloscript variant, when the differences between that version and the others were understood, the actual tool could begin development.
+For the tool itself, it was decided that a graphical node-based language would be used to represent the unknown propriety Megaloscript language.
+Which essentially meant designing the Megaloscript language myself, although since Megaloscript is an interpretted language, the core functionality didn't need designing. So it was merely a task of designing the language's syntax.
+
+The idea for a node based language was inspired by Unreal Engine's Blueprint system, which provides a unique and intuitive programming experience.
+It also allowed breaking the language down into something much simpler than can be achieved by text based code, which would help users understand the Megaloscript language much better.
+
+By using a node based language, it means that the code is impossible to have syntax errors. Which means that its generally easier to work with.
+However the code is slightly harder to work with, in a 2 dimensional state. Partly because it requires greater organization skills, and partly because it creates an excess of unneeded bloat, which just gets in the way of making code.
+
+And for those reasons, is why this was a hobby project, and not intended for public use.
+
+Once the language was desinged and implemented, then support was added for the 2 other Megaloscript variants.
+Along with a plethora of helpful features, such as: block comments, node searching, variable names & so on.
+
+This tool is one of:
+4 tools that can read Megaloscript,
+3 tools that can compile Megaloscript,
+2 tools that support all major Megaloscript variants
+
+The only other tool that matches compatibility is the propriety Megaloscript compiler, developed by 343 industries as the official tool to compile Megaloscript.
+That tool was recently released in 2022, more than a year after the release of Megalograph.
+
+All-together this project was great opportunity to explore the C# WPF UI framework, and develop my programming & UI development skills`,
     },
     example8: {
         name: "IRTV",
@@ -347,6 +375,8 @@ var Projects ={
         deps: ["visual_studio","csharp","wpf","cheat_engine"],
         Desc: 
 `Halo Infinite Runtime Tag-Viewer (IRTV) is an intuitive, user friendly tool for creating & applying game modifications to Halo Infinite.
+
+To begin with
 `,
     },
     example9: {
@@ -363,8 +393,16 @@ var Projects ={
 
 Originally starting off as researching various hidden cosmetics & Halo's cosmetic synchronization system, it soon became a fully featured tool for users to change their characters mid-match. Including the possibility to use previosly unused/locked cosmetics.
 
-The tool was the work of a team of 
-`,
+After the concept was proven with the research, a few other members of the Halo community joined along to assist with the tool's development.
+Because this was our first time developing software, we had opted to use a more basic framework for the tool. Which was the WinForms framework.
+The WinForms framework provided a relatively simple set of tools which allowed easily building user interfaces.
+However due to the simplicity of the framework, it lead to numerous issues with development, which were eventually resolved. 
+
+For the actually functionality of the tool (providing realtime cosmetics switching) we had decided on using the Memory.dll nuget package.
+Which provided a lot of out of the box functionality for reading & writing the RAM of another windows process. Allowing us to effectively interface our tool with the Halo windows processes.
+
+It was the first standalone executable program i had worked on, although most of the interface & functionality was designed by team member Cozi. My part was mostly interfacing the tool with the Halo window processes.
+But because of the opportunity to see firsthand how software could be developed, this inspired me to learn more about making software, which has since led me on a pathway to learning numerous programming frameworks and languages`,
     },
 
 }
