@@ -4,6 +4,7 @@ body{
     padding: 0px;
     background-color: #101010;
     overflow-y: hidden;
+    font-family: 'Times New Roman', Times, serif;
 }
 ::-webkit-scrollbar {
     width: 10px;
@@ -226,15 +227,15 @@ body{
     aspect-ratio: 2 / 1;
     background-color: #101010;
     overflow: hidden;
-    border: none;
-    border-bottom: 2px solid;
-    border-color: #316031;
+    border: 1px solid black;
+}
+.c_i_i_t_interactive{
     transition: border-color 150ms linear;
 }
-.c_i_i_trioframe:hover{
+.c_i_i_t_interactive:hover{
     border-color: #709070;
 }
-.c_i_i_trioframe:active{
+.c_i_i_t_interactive:active{
     border-color: #90FF90;
 }
 .c_i_i_focusframe{
@@ -242,8 +243,19 @@ body{
     display: inline-block;
     box-sizing: border-box;
     width: calc(100% - 5px);
-    background-color: #101010;
+    aspect-ratio: 2 / 1;
+    background-color: #080808;
     overflow: hidden;
+}
+.c_i_i_f_img_preview{
+    object-fit: contain;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    width: 100%;
+    height: 100%;
 }
 
 /* ///////////// //
@@ -265,7 +277,8 @@ body{
     border-color: #101010;
     transition: border-color 150ms linear;
     
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
 }
 .c_item:hover {
     background-color: #242424; /*F0;*/

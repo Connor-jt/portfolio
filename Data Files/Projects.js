@@ -3,20 +3,29 @@
 function init(){
     LoadDepends();
     LoadProjects();
-
+    // get a random tile and expand it
+    expand_target_item(document.getElementById("projects_list").firstElementChild); 
 }
 var currently_expanded_item = undefined;
 function config_trio_image(ui, src){
+    let img = ui.firstElementChild;
     if (src != null && src != ""){
-        ui.style["display"] = "inline-block";
-        ui.src = src;
-    } else ui.style["display"] = "none";
-}
+        ui.className = "c_i_i_t_interactive c_i_i_trioframe";
+        img.src = src;
+        img.style["display"] = "inline-block";
+    } else {
+        ui.className = "c_i_i_trioframe";
+        img.src = null;
+        img.style["display"] = "none";
+}}
 function expand_item(){
+    expand_target_item(this);
+}
+function expand_target_item(item){
     let focus_panel = document.getElementById("focus_presenter");
-    if (currently_expanded_item == this){ // then close the thing entirely
-        minimize_item(currently_expanded_item);
-        focus_panel.classList.add("c_focused_item_shrink");
+    if (currently_expanded_item == item){ // then close the thing entirely // we now do not allow closing
+        //minimize_item(currently_expanded_item);
+        //focus_panel.classList.add("c_focused_item_shrink");
         return;
     }
     let panel_was_open = (currently_expanded_item != undefined);
@@ -27,7 +36,7 @@ function expand_item(){
     // mark this visually as open
 
     // find the project associated with this tile
-    let project = Projects[this.getAttribute("project")];
+    let project = Projects[item.getAttribute("project")];
 
     document.getElementById("focus_title").innerText = project.name;
     document.getElementById("focus_date").innerText = project.Date;
@@ -36,10 +45,13 @@ function expand_item(){
     document.getElementById("focus_desc").innerText = project.Desc;
 
     // setup images
-    config_trio_image(document.getElementById("focus_imgF"), project.img1);
-    config_trio_image(document.getElementById("focus_img1"), project.img1);
-    config_trio_image(document.getElementById("focus_img2"), project.img2);
-    config_trio_image(document.getElementById("focus_img3"), project.img3);
+    //config_trio_image(document.getElementById("focus_imgF"), project.img1);
+    config_trio_image(document.getElementById("focus_frame1"), project.img1);
+    config_trio_image(document.getElementById("focus_frame2"), project.img2);
+    config_trio_image(document.getElementById("focus_frame3"), project.img3);
+
+    // reset selected image status
+    select_image1();
 
     // cleanup previous tags if any
     let tag_container = document.getElementById('focus_tags');
@@ -55,8 +67,8 @@ function expand_item(){
     if (!panel_was_open){
         focus_panel.classList.remove("c_focused_item_shrink");
     }
-    this.style["border-bottom"] = "2px solid #ff5c00";
-    currently_expanded_item = this; // this so when pressed again, can be hidden
+    item.style["border-bottom"] = "2px solid #ff5c00";
+    currently_expanded_item = item; // this so when pressed again, can be hidden
 }
 function minimize_item(item){
     item.removeAttribute("style"); // this will clear the forced selected visual effect
@@ -77,6 +89,9 @@ function select_image(image_id, frame){
     let focus_imgF = document.getElementById("focus_imgF");
     let new_src = document.getElementById(image_id);
     let new_frame = document.getElementById(frame);
+
+    if (new_src.style["display"] == "none") 
+        return;
 
     focus_imgF.src = new_src.src;
     if (last_selected_frame != undefined){
@@ -226,34 +241,40 @@ var Projects ={
         name: "Xbox Texture RE",
         Date: "2023",
         Basc: "Reversal of XBOX Tex Formats",
-        Desc: "Detailed Overview 1",
         imgp: "Resources/Examples/RE/RE_1.png",
         img1: "Resources/Examples/RE/RE_1.png",
         img2: "Resources/Examples/RE/RE_2.png",
         img3: "Resources/Examples/RE/RE_3.png",
-        deps: ["visual_studio","cpp","ghidra"]
+        deps: ["visual_studio","cpp","ghidra"],
+        Desc: 
+`HaloPogSwitch (HPS) 
+`,
     },
     example2: {
         name: "Javasqiggle",
         Date: "2023",
         Basc: "Multiplayer 3D Browser Game",
-        Desc: "Detailed Overview 2",
         imgp: "Resources/Examples/JS/JS_1.png",
         img1: "Resources/Examples/JS/JS_1.png",
         img2: "Resources/Examples/JS/JS_2.png",
         img3: "Resources/Examples/JS/JS_3.png",
-        deps: ["vs_code","javascript","htmlcss","opengl","peerjs"]
+        deps: ["vs_code","javascript","htmlcss","opengl","peerjs"],
+        Desc: 
+`HaloPogSwitch (HPS) 
+`,
     },
     example3: {
         name: "Codename Atriox",
         Date: "2023",
         Basc: "Array of WIP Halo-Infinite Tools",
-        Desc: "Detailed Overview 3",
         imgp: "Resources/Examples/CA/CA_1.png",
         img1: "Resources/Examples/CA/CA_1.png",
         img2: "Resources/Examples/CA/CA_2.png",
         img3: "",
-        deps: ["visual_studio","cpp","directx","dear_imgui","csharp","wpf"]
+        deps: ["visual_studio","cpp","directx","dear_imgui","csharp","wpf"],
+        Desc: 
+`HaloPogSwitch (HPS) 
+`,
     },
 
     // //////////////// //
@@ -263,34 +284,40 @@ var Projects ={
         name: "UE5 marching cubes",
         Date: "2022",
         Basc: "UE5 Procedural terrain",
-        Desc: "Detailed Overview 4",
         imgp: "Resources/Examples/MC/MC_3.png",
         img1: "Resources/Examples/MC/MC_3.png",
         img2: "Resources/Examples/MC/MC_1.png",
         img3: "Resources/Examples/MC/MC_2.png",
-        deps: ["unreal_engine","blueprints"]
+        deps: ["unreal_engine","blueprints"],
+        Desc: 
+`HaloPogSwitch (HPS) 
+`,
     },
     example5: {
         name: "Megaloscript RE",
         Date: "2022",
         Basc: "Megaloscript RE & Documentation",
-        Desc: "Detailed Overview 5",
         imgp: "Resources/Examples/ME/ME_1.png",
         img1: "Resources/Examples/ME/ME_1.png",
         img2: "Resources/Examples/ME/ME_2.png",
         img3: "Resources/Examples/ME/ME_3.png",
-        deps: ["ghidra","x64dbg"]
+        deps: ["ghidra","x64dbg"],
+        Desc: 
+`HaloPogSwitch (HPS) 
+`,
     },
     example6: {
         name: "Megaloscript Mods",
         Date: "2022",
         Basc: "Popular Megaloscript Mods",
-        Desc: "Detailed Overview 6\nthis desc in particular will be longer than the rest\n\n\n\ntest\ntest\ntest\ntest\ntest\ntest\ntest",
         imgp: "Resources/Examples/MS/MS_1.png",
         img1: "Resources/Examples/MS/MS_1.png",
         img2: "Resources/Examples/MS/MS_2.png",
         img3: "Resources/Examples/MS/MS_3.png",
-        deps: ["vs_code"]
+        deps: ["vs_code"],
+        Desc: 
+`HaloPogSwitch (HPS) 
+`,
     },
 
     // //////////////// //
@@ -300,34 +327,44 @@ var Projects ={
         name: "Megalograph",
         Date: "2021",
         Basc: "Visual Megaloscript Compiler",
-        Desc: "Detailed Overview 4",
         imgp: "Resources/Examples/MG/MG_2.png",
         img1: "Resources/Examples/MG/MG_2.png",
         img2: "Resources/Examples/MG/MG_3.png",
         img3: "Resources/Examples/MG/MG_1.png",
-        deps: ["visual_studio","csharp","wpf", "hxd"]
+        deps: ["visual_studio","csharp","wpf", "hxd"],
+        Desc: 
+`Megalograph  
+`,
     },
     example8: {
         name: "IRTV",
         Date: "2021",
         Basc: "Halo-Infinite Realtime Modding Tool",
-        Desc: "Detailed Overview 5",
         imgp: "Resources/Examples/IRTV/IRTV_1.png",
         img1: "Resources/Examples/IRTV/IRTV_1.png",
         img2: "Resources/Examples/IRTV/IRTV_2.png",
         img3: "Resources/Examples/IRTV/IRTV_3.png",
-        deps: ["visual_studio","csharp","wpf","cheat_engine"]
+        deps: ["visual_studio","csharp","wpf","cheat_engine"],
+        Desc: 
+`Halo Infinite Runtime Tag-Viewer (IRTV) is an intuitive, user friendly tool for creating & applying game modifications to Halo Infinite.
+`,
     },
     example9: {
         name: "HPS",
         Date: "2021",
         Basc: "Halo-MCC Realtime Cosmetics Modifer",
-        Desc: "Detailed Overview 6\nthis desc in particular will be longer than the rest\n\n\n\ntest\ntest\ntest\ntest\ntest\ntest\ntest",
         imgp: "Resources/Examples/HPS/HPS_1.png",
         img1: "Resources/Examples/HPS/HPS_1.png",
         img2: "Resources/Examples/HPS/HPS_2.png",
         img3: "Resources/Examples/HPS/HPS_3.png",
-        deps: ["visual_studio","csharp","winforms","cheat_engine"]
+        deps: ["visual_studio","csharp","winforms","cheat_engine"],
+        Desc: 
+`HaloPogSwitch (HPS) is a realtime armor/cosmetics switching tool, supporting 3 seperate halo games: Halo Reach, Halo 4 & Halo 2 Anniversary.
+
+Originally starting off as researching various hidden cosmetics & Halo's cosmetic synchronization system, it soon became a fully featured tool for users to change their characters mid-match. Including the possibility to use previosly unused/locked cosmetics.
+
+The tool was the work of a team of 
+`,
     },
 
 }
