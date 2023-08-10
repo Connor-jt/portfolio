@@ -247,7 +247,7 @@ var Projects ={
         img3: "Resources/Examples/RE/RE_3.png",
         deps: ["visual_studio","cpp","ghidra"],
         Desc: 
-`HaloPogSwitch (HPS) 
+`
 `,
     },
     example2: {
@@ -290,9 +290,31 @@ var Projects ={
         img3: "Resources/Examples/MC/MC_2.png",
         deps: ["unreal_engine","blueprints"],
         Desc: 
-`HaloPogSwitch (HPS) 
-`,
-    },
+`A revisitation to an older project of mine, where i had previously partially implemented the marching cubes algorithm in Unreal Engine 4.
+The aim of this project was to fully implement the marching cubes algorithm into unreal engine 5, with full smoothing implemented.
+
+Something that i've always enjoyed is making content that makes itself. Procedural generation or AI or any of that stuff.
+On several occasions i had implemented different techniques of procedural terrain generation in game engines, most notable was my previous marching cubes implementation.
+
+So given that the project was originally incomplete, i had decided to revisit & finally finish it. In the process i also upgraded to a newer game engine.
+
+The marching cubes algorithm itself is a simple set of rules that dictate what type of shape should be generated, given 8 verticies on a cube.
+Each vertex holds a single bit of data: whether it is inside or outside of the shape.
+By knowning which of the 8 verticies are inside the mesh, we can calculate the shape inside that cube, for a total possible of 256 shapes.
+
+If a more advanced algorithm is needed for smoother shapes, each vertex can represnt a floating point number, which defines how solid that vertex is.
+by defining how solid each vertex is, we can calculate the exact contour offset between each pair of verticies, allowing smoother shapes.
+
+Combine that algorithm with a 3d procedural noise algorithm and you have an interesting procedural terrain system.
+
+In revisiting this project, i learnt of a flaw in the original marching cubes algorithm which i had previously faced. Which was the problem of ambiguous faces between adjucant cubes.
+This time around i desinged a solution, resulting in a much better implementation.
+
+Overall, the project turned out rather well. But due to it being built with the Unreal blueprints language, it did not perform as well as expected.
+Which ultimately marked the end of this project, lest it be reimplemented again in a more performant language.
+Otherwise, this project could have led to the development of a roguelike game that had been on my mind for a while.`,},
+
+
     example5: {
         name: "Megaloscript RE",
         Date: "2022",
@@ -303,9 +325,10 @@ var Projects ={
         img3: "Resources/Examples/ME/ME_3.png",
         deps: ["ghidra","x64dbg"],
         Desc: 
-`HaloPogSwitch (HPS) 
-`,
-    },
+`
+`,},
+
+
     example6: {
         name: "Megaloscript Mods",
         Date: "2022",
@@ -316,9 +339,66 @@ var Projects ={
         img3: "Resources/Examples/MS/MS_3.png",
         deps: ["vs_code"],
         Desc: 
-`HaloPogSwitch (HPS) 
-`,
-    },
+`After gaining expertise in the Megaloscript languages, i started working on more ambitous Megaloscript projects.
+The goal of these projects were to bring entirely unqiue and new experiences to all players of Halo MCC.
+Which mostly entailed bringing forms of AI to the Custom Game Browser.
+
+The first and most popular of these projects was my attempt at a players vs zombies experience.
+Oringially it was only designed as a test to see how convincing the AI could be. 
+But was turned into a full scale project upon the realization that these AI could animate and behave as any user would expect them to.
+Which was not expected, else the project would have been abandonded.
+
+Following the development of this mode, a lot of interest was shown by the Halo community, as having AI in multiplayer was not a feature in the game.
+With growing interest came growing demands for this project, which eventually lead this experience to be more than a simple mod.
+The finished project ended up with countless features (objectives, AI customization, currency systems, etc), and complete customizability for users of the mod.
+The users could completely customize how the experience played, what the objectives were, how easy it was and so on, even customizing what happened to players after they had died.
+
+Another highly popular mod was the Scarab project, which was aimed to be a massive reimagination of the popular 'Invasion' experience. 
+'Invasion' being an asymmetric PvP experience, where teams of players would take turns at attacking and defending numerous objectives, featuring probably the most immersive Halo PvP experience. 
+
+The key idea behind the scarab project was the focus of the large AI controlled scarab vehicle (an iconic Halo quadruped vehicle).
+Similar to Invasion there would be two teams, one who has to defend and the other attacking.
+However as a part of this reimagination process, it was decided that both teams had the opportunity to defend and attack, simutaneously.
+One team would be defending the scarab AI, while it would be attacking the base of the opposing team.
+The other team would be defending their base, along with attacking the scarab AI.
+
+In a way this allowed the gamemode to maintain its asymmetric objective, but have an opportunity for either team to win, without having to swap roles. Which was perfect for this mode as the average round time was around 30 minutes.
+
+Aside from the gameplay, what really blew players away was the fact that the AI scarab was even possible.
+For nearly 8 years, there had not been a single experience like it. Nor one anywhere as advanced.
+And of course if not for my artistic genius of a friend, mr dr milk, the experience would not have been as nearly as fantastic.
+
+
+Throughout my time spent working with Megaloscript, the limitations were pushed to incredible lengths to allow my projects to exist.
+Partly due to flaws in the Language, and partly due to my effort to push the language as far as i possibly could.
+
+One of my favorite flaws in the language was a way to compute floating point maths, in a language that lacked floating point numbers.
+The exploit was relying on variables outside of the language to do the maths for us, which ended up being the shield & health values of playable characters.
+The Megaloscript language had no float variables, but it did allow modifying the shield & health values of characters. Which as it turned out were floating point numbers.
+
+The maths becomes slightly complicated, as the original devepers had made errors within the code interpretter, where regardless of the operator it would divide the opperand by 100.
+so to half a floating point number, you would have to divide it by 200.
+There were numerous limitations with this technique, but it did at least allow floating point calculations, which was just enough to implement the Arc cosine function into Megaloscript.
+And by having the Arc cosine function, we could utilize inverse kinematics for the scarab vehicle's legs, which may be one of the most impressive feats in halo modding to date.
+
+
+At the time those projects were developed and released, there were no PvE (Player vs Enemy) experiences available to the MCC Custom Game Browser.
+Which 
+
+
+These projects
+
+
+
+
+
+... something 100,000 players
+... something 1,000,000 viewers
+
+
+
+`,},
+
 
     // //////////////// //
     // 2021 HIGHLIGHTS //
@@ -354,16 +434,15 @@ And for those reasons, is why this was a hobby project, and not intended for pub
 Once the language was desinged and implemented, then support was added for the 2 other Megaloscript variants.
 Along with a plethora of helpful features, such as: block comments, node searching, variable names & so on.
 
-This tool is one of:
-4 tools that can read Megaloscript,
-3 tools that can compile Megaloscript,
-2 tools that support all major Megaloscript variants
-
-The only other tool that matches compatibility is the propriety Megaloscript compiler, developed by 343 industries as the official tool to compile Megaloscript.
+The only other tool that matches compatibility with all major Megaloscript variants is the propriety Megaloscript compiler, developed by 343 industries as the official tool to compile Megaloscript.
 That tool was recently released in 2022, more than a year after the release of Megalograph.
 
-All-together this project was great opportunity to explore the C# WPF UI framework, and develop my programming & UI development skills`,
-    },
+However, Megalograph provides the functionality to decompile Megaloscripts, meaning that it has native compatibility with every other tool that compiles Megaloscript.
+Unlike the official compiler, which lacks support for reading Megalosrcipt compiled from other tools.
+
+All-together this project was great opportunity to explore the C# WPF UI framework, and develop my programming & UI development skills`,},
+
+
     example8: {
         name: "IRTV",
         Date: "2021",
@@ -376,9 +455,24 @@ All-together this project was great opportunity to explore the C# WPF UI framewo
         Desc: 
 `Halo Infinite Runtime Tag-Viewer (IRTV) is an intuitive, user friendly tool for creating & applying game modifications to Halo Infinite.
 
-To begin with
-`,
-    },
+Initially this tool was designed as a research framework, to understand the underlying game engine behind the game Halo Infinite.
+As demand grew for a functional modding tool for Halo Infinite, this tool recieved a lot of attention, and was soon modified to meet demands.
+
+The attention grew not only from users interested in making modifications to the game, but also other modders who desired to be apart of the future of game modding for Halo Infinite.
+within a few weeks the development team rose from just myself, to about 13 people, and countless other people who helped out from a less technical standpoint.
+
+Following, millions of lines of code would be committed the project, and potentially thousands of users downloading and using the tool.
+
+Due to popularity we even partnered with one of the largest Online Halo communities (HaloCustoms.com), to provide a convenient place for users to download & share their mods generated with this tool.
+
+... fill in more here
+... something pathway of halo modding
+... something better than alternative tools
+
+This was definitely one of my biggest projects, both in scope and demand. It provided an excellent opportunity to become familiar with the C# software development framework.
+It also provided a great opportunity to learn about meeting and managing the demands of a moderate-to-large user-base.`,},
+
+
     example9: {
         name: "HPS",
         Date: "2021",
@@ -402,8 +496,7 @@ For the actually functionality of the tool (providing realtime cosmetics switchi
 Which provided a lot of out of the box functionality for reading & writing the RAM of another windows process. Allowing us to effectively interface our tool with the Halo windows processes.
 
 It was the first standalone executable program i had worked on, although most of the interface & functionality was designed by team member Cozi. My part was mostly interfacing the tool with the Halo window processes.
-But because of the opportunity to see firsthand how software could be developed, this inspired me to learn more about making software, which has since led me on a pathway to learning numerous programming frameworks and languages`,
-    },
+But because of the opportunity to see firsthand how software could be developed, this inspired me to learn more about making software, which has since led me on a pathway to learning numerous programming frameworks and languages`,},
 
 }
 
