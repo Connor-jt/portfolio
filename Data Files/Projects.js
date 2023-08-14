@@ -380,13 +380,39 @@ Which ultimately marked the end of this project, lest it be reimplemented again 
         img3: "Resources/Examples/ME/ME_3.png",
         deps: ["ghidra","x64dbg"],
         Desc: 
-`To conclude my time spent learning Megaloscript, i reverse engineered unknown binary code & then released documentation for the majority of the language.
-Featuring a full 72 page document, Covering almost every notable aspect of Megaloscript.
-From explaining what the basic rules of variables to countless dark magic techniques.
+`To conclude my time spent learning Megaloscript, i reverse engineered unknown machine code & then released documentation for the majority of the language.
+Featuring a full 60 page document, Covering almost every notable aspect of Megaloscript.
 
-The reverse engineering began 
+The reverse engineering was mostly targeted at converting the machine code into human readable code.
+Which first started off with simple things like understanding how the compiled code was processed.
+Next up would be investigating opcodes that did either did nothing or didn't work as expected, and as it would turn out some of them were intentionally disabled by the developers.
+Infact, i discovered a fair few mistakes that i was able to contact the developers about and let them know exactly what the problem was.
+Which enabled them to rapidly fix the issues.
 
-`,},
+There were a lot of interesting things that were discovered about the language, upon unscrambling the machine code that interprets it.
+For example a very unique code compression technique was discovered, which utilizes null actions & conditions to adjust relative offsets of the following conditions & actions. 
+Meaning the functions can share the same bytes of code, but with different arrangements.
+However that technique is only theoretical and untested in practice, so may be flawed.
+
+Finally came the documentation. 
+While there was already good documentation out there for a Megaloscript variant, that only covered content for somewhat experienced users.
+The intention with my documentation was to provide a source of knowledge that could benefit users of any level, all the way from just beginning to the most advanced.
+
+Within the documentation is a brief history of the language - what i managed to learn about it,
+Variables and how they work (variable limits, semi object oriented variable storage system),
+The syntactic/compiled code structures, how plaintext code is compiled, Best practice code optimizations.
+Most importantly it covers all code techniques that drastically expand the language's capabilities.
+
+This ranges from things as simple as techniques to create convincing object movement, to exploiting flaws in the language to bypass systems that enforce synchronized states between multiplayer clients.
+For context, a large quantity of things are synchronized between every player in a Halo multiplayer session (like visible objects, variables, etc).
+By breaking synchronization, you can achieve so many things that were never possible. Which can be achieved by finding a player state that does not synchronize between client, and using that to identify the local player.
+As if that state does not synchronize, then the state can only exist for the local client's player, allowing us to determine which ingame player is the local one.
+We can then use simple logic gates and synchronized states to feed data from the server to selected clients (through synchronized player states), where previously it was only ever possible to feed data to all clients simutanously.
+
+Thats the kind of techniques featured in the documentation, fully detailed with ready to go sample code provided.
+And of course, things that were discovered with reversal were also featured, bugs, discoveries and all that.
+
+This project gave me a fair bit of experience with machine code reversal, and then documentation of findings.`,},
 
 
     example6: {
@@ -443,7 +469,7 @@ There were numerous limitations with this technique, but it did at least allow f
 And by having the Arc cosine function, we could utilize inverse kinematics for the scarab vehicle's legs, which may be one of the most impressive feats in halo modding to date.
 
 
-Collectively these projects reached millions of viewers, and somewhere in the realm of 100's of thousands of players.
+Collectively these projects reached millions of viewers, and somewhere in the realm of hundreds of thousands of players.
 It proved a great opportunity to hear from so many players, what they did like, and what they did not.
 Which allowed me to continually improve the experiences so that everyone could get what they wanted out of it.`,},
 
