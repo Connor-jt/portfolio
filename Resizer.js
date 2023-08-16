@@ -41,7 +41,7 @@ const _5ipr_width = 1200;*/
 const collapse_width = 800;
 const collapse_ratio = 0.80;
 const focus_tile_width = 800;
-const focus_tile_ratio = 1.2;
+const focus_tile_ratio = 1.4;
 
 const _1ipr_width =  300;
 const _2ipr_width =  600;
@@ -61,37 +61,30 @@ function resize(){ // run once on init, and then whenever
 
     // detemine if the sidebar can fit, or has to go up the top
     if (aspect_ratio < collapse_ratio || available_width < collapse_width){ // then collpase header
-        if (last_ratio >= collapse_ratio || last_ratio == -1){
-            doc_scroll.className = "page_scroll";
-            content_scroll.className = "";
-            c_sidebar.className = "collapsed_sidebar";
-            c_code.className = "background_sample";
-        }
-    } 
-    else{ // then expand header
+        doc_scroll.className = "page_scroll";
+        content_scroll.className = "";
+        c_sidebar.className = "collapsed_sidebar";
+        c_code.className = "background_sample";
+    } else{ // then expand header
         available_width -= 300; // size of the sidebar 
-        if (last_ratio >= collapse_ratio || last_ratio == -1){
-            doc_scroll.className = "";
-            content_scroll.className = "content_scroll page_scroll";
-            c_sidebar.className = "sidebar";
-            c_code.className = "background_sample background_expand";
-        }
+        doc_scroll.className = "";
+        content_scroll.className = "content_scroll page_scroll";
+        c_sidebar.className = "sidebar";
+        c_code.className = "background_sample background_expand";
     } 
 
     // determine whether tiles should be placed on the side
-    if (aspect_ratio > focus_tile_ratio && available_width >= focus_tile_width + 300){ // then put tiles on the sidebar
+    if (aspect_ratio < focus_tile_ratio || available_width < focus_tile_width + 300){ 
+        // expand fullscreen, tiles at bottom
+        focus_tile.classList.remove("c_focused_item_exand");
+        focus_tile.classList.add("c_focused_item_collapsed");
+        all_tiles.className = "";
+    } else {
+        // stick tiles to the right side
         available_width -= focus_tile_width;
-        if (last_ratio < focus_tile_ratio || last_ratio == -1){
-            focus_tile.classList.remove("c_focused_item_collapsed");
-            focus_tile.classList.add("c_focused_item_exand");
-            all_tiles.className = "tiles_sidebar";
-        }
-    } else { // tiles go at the bottom
-        if (last_ratio >= focus_tile_ratio || last_ratio == -1){
-            focus_tile.classList.remove("c_focused_item_exand");
-            focus_tile.classList.add("c_focused_item_collapsed");
-            all_tiles.className = "";
-        }
+        focus_tile.classList.remove("c_focused_item_collapsed");
+        focus_tile.classList.add("c_focused_item_exand");
+        all_tiles.className = "tiles_sidebar";
     }
 
 
@@ -113,7 +106,6 @@ function resize(){ // run once on init, and then whenever
             assign_all_tiles_classes("c_item c_item_ipr5");
     }}
 
-    last_width = this.innerWidth;
     last_available_width = available_width;
 }
 function assign_all_tiles_classes(classes){
