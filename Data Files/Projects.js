@@ -11,6 +11,7 @@ function config_trio_image(ui, src){
     let img = ui.firstElementChild;
     if (src != null && src != ""){
         ui.className = "c_i_i_t_interactive c_i_i_trioframe";
+        img.src = null;
         img.src = src;
         img.style["display"] = "inline-block";
     } else {
@@ -180,6 +181,7 @@ function LoadProjects(){
                 if (item.imgp != null || item.imgp != ""){
                     let image_preview_img = document.createElement('img');
                     image_preview_img.className = "c_i_img_preview";
+                    image_preview_img.src = null;
                     image_preview_img.src = item.imgp;
                     image_preview.appendChild(image_preview_img);
                 }
