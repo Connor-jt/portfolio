@@ -49,6 +49,7 @@ const _3ipr_width =  800;
 const _4ipr_width = 1000;
 const _5ipr_width = 1200;
 
+const code_min_expand_width = 500;
 
 function resize(){ // run once on init, and then whenever 
     // determine whether to collpase sidebar
@@ -85,7 +86,12 @@ function resize(){ // run once on init, and then whenever
         focus_tile.classList.remove("c_focused_item_collapsed");
         focus_tile.classList.add("c_focused_item_exand");
         all_tiles.className = "tiles_sidebar";
+        // if enough room on the sidebar, put the code behind them mini tiles
+        if (available_width >= code_min_expand_width){
+            c_code.className = "background_sample background_further_expand"; 
+        }
     }
+
 
 
     // determine tile size

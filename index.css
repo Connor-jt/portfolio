@@ -47,6 +47,10 @@ body{
     left: 300px;
     width: calc(100% - 300px);
 }
+.background_further_expand{
+    left: 1100px;
+    width: calc(100% - 1100px);
+}
 .codeline {
     tab-size: 4;
     display: block;
