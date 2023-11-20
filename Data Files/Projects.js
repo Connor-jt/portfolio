@@ -239,30 +239,59 @@ var Projects ={
     // //////////////// //
     // 2023 HIGHLIGHTS //
     // ////////////// //
-    /* // removed because its not really a notable project, nor shows many notable skills
-    example: {
-        name: "Xbox Texture RE",
+    example3: {
+        name: "Codename Atriox",
         Date: "2023",
-        Basc: "Reversal of XBOX Tex Formats",
-        imgp: "Resources/Examples/RE/RE_1.png",
-        img1: "Resources/Examples/RE/RE_1.png",
-        img2: "Resources/Examples/RE/RE_2.png",
-        img3: "Resources/Examples/RE/RE_3.png",
-        deps: ["visual_studio","cpp","ghidra"],
+        Basc: "Slipspace mod tools",
+        imgp: "Resources/Examples/CA/CA_1.png",
+        img1: "Resources/Examples/CA/CA_1.png",
+        img2: "Resources/Examples/CA/CA_2.png",
+        img3: "Resources/Examples/CA/CA_3.png",
+        deps: ["visual_studio","cpp","directx","dear_imgui","csharp","wpf"],
         Desc: 
-`As a small project to buffer the work of my larger projects
-`,
-    },*/
-    example2: {
-        name: "Javasqiggle",
-        Date: "2023",
-        Basc: "Multiplayer Web Browser Game",
-        imgp: "Resources/Examples/JS/JS_1.png",
-        img1: "Resources/Examples/JS/JS_1.png",
-        img2: "Resources/Examples/JS/JS_2.png",
-        img3: "Resources/Examples/JS/JS_3.png",
-        deps: ["vs_code","javascript","htmlcss","opengl","peerjs","blender"],
-        Desc: 
+`Codename Atriox (CA) was designed as a feature-rich, reimagination of the older developer/modding tools for working with the 'Blam!' & 'Slipspace' game engines.
+The goal of the project was to replace the older modding tools with community driven developer level tools, that would allow users to create content for the engine (particularly for the game Halo Infinite), as the developers can.
+
+The reasoning behind this, is because the Slipspace game engine is closed-source & no developer tools are available. Meaning all tools have to be created & maintained by the community.
+And the secondary factor was that there were no other community powered tools that enabled users to create new content, opposed to making edits to the existing content.
+
+
+The first tool in the collection was our heavily Visual Studio inspired Tag file viewer (Tag files being the files that store the game-asset's data).
+
+The purpose of this tool is to view and edit the game-assets' container files (module files), which is the fundamental feature of being able to make/modify content for the game engine.
+Its the core tool for modding the game. However there are already numerous tools that serve the same role as this one, but they do not support recompiling Modules. Limiting the amount of content you can possibly create with those tools.
+
+It features an internal file browser for tag file navigation & searching, along with an intuitive, user-friendly text-based tag file property editor. 
+The goal with that was to at first glance, convince users that the binary content is stored in plaintext, which would make navigation much easier than an interface that presented the binary data in structures.
+By having the data formatted like this, it could support easily exporting this data into actual plaintext, which can then be used for a lot of different analysis related tasks. IE. comparing differences between two assets.
+
+For the features this tool lacks, they would be covered in various helper command-line tools, which would be stuff like model/texture importing/exporting, module file compiling/decompiling, and tools to dump various datas from the game engine.
+It was initially planned for all these helper tools to be bundled up into a singler helper tool (to simplify the processes), but as it stands all the tools remain individial.
+
+
+The other main tool in this project is the tag tester (& exporter).
+This tool provides the functionality to simulate how the data would be processed if accessed by the Slipspace game engine.
+For example, the tool will load, process & render textures and geometry from the exact propriety data formats that Slipspace uses.
+This allows for rapid error detection. Otherwise, you'd have to constantly reload the modified data into the release build of Halo Infinite to detect any issues.
+It also provides the ability to view/preview assets without having to access the data with the Slipspace engine, which can be rather inconvenient in most cases.
+
+It also provides the functionality to convert specific data types into non-propreity, standard formats, such as image assets.
+Which can be useful if users want to extract & modify those specific assets. Or it can also be useful for exporting the data to other programs to better inspect any errors/details. 
+
+For the most part, this was an interesting project to take on, as most of the research has to be conducted by myself.
+And from it, i gained a fair level of experience with a lot of different languages & frameworks, a few of which include: C++, directX11 & DearImGUI.`,},
+
+
+example2: {
+    name: "Javasqiggle",
+    Date: "2023",
+    Basc: "Multiplayer Web Game",
+    imgp: "Resources/Examples/JS/JS_1.png",
+    img1: "Resources/Examples/JS/JS_1.png",
+    img2: "Resources/Examples/JS/JS_2.png",
+    img3: "Resources/Examples/JS/JS_3.png",
+    deps: ["vs_code","javascript","htmlcss","opengl","peerjs","blender"],
+    Desc: 
 `Javasqiggle is a simple web browser game utilizing PeerJS multiplayer & OpenGl (ThreeJS) web graphics.
 The purpose of this project was to become familiar with JavaScript and web development, while also creating something fun/interesting that i can share with others.
 
@@ -292,50 +321,13 @@ The website itself utilizes GitHub's free website hosting feature "GitHub Pages"
 As per the goal of this project, I gained a lot of experience in web development and the end product yielded a good demonstration of my skills.`,},
 
 
-    example3: {
-        name: "Codename Atriox",
-        Date: "2023",
-        Basc: "Array of WIP Halo-Infinite Tools",
-        imgp: "Resources/Examples/CA/CA_1.png",
-        img1: "Resources/Examples/CA/CA_1.png",
-        img2: "Resources/Examples/CA/CA_2.png",
-        img3: "",
-        deps: ["visual_studio","cpp","directx","dear_imgui","csharp","wpf"],
-        Desc: 
-`Codename Atriox (CA) is a work in progress, community driven set of developer tools. Intended for creating and modifying experiences for the video-game Halo Infinite.
-Because of the lack of official developer mod support, all mods for this game must be powered by community developed tools.
-As of yet there are currently no community tools capable of proper mod support, but there are tools for basic modding, which is why this project was set in development.
-
-The first tool in the collection was our heavily Visual Studio inspired Tag file viewer (Tag files being the files that store the game-asset's data).
-
-The purpose of this tool is to view and edit the game-assets' container files (module files), which is the fundamental feature of being able to make/modify content for the game engine.
-Its the core tool for modding the game, there are already numerous tools that serve the same role as this one. However, they do not support recompiling Modules. Limiting the amount of content you can possibly create with those tools.
-
-It features an internal file browser for tag file navigation & searching, along with an intuitive, user-friendly text-based tag file property editor. 
-The goal with that was to at first glance, convince users that the binary content is stored in plaintext, which would make navigation much easier than an interface that presented the binary data in structures.
-
-For the features it lacks, would be covered in various helper command-line tools, which would be stuff like model/texture importing/exporting, module file compiling/decompiling, and tools to dump various datas from the game engine.
-Those command-line would be bundled up into a single helper tool, making the usage process much simpler.
-
-The other main tool in this project is the tag tester (& exporter).
-This tool provides the functionality to simulate how the data would be processed if accessed by Halo Infinite's game engine.
-For example, the tool will load, process & render textures and geometry from the exact propriety data formats that Halo Infinite would use.
-This would allow users to rapidly test and iterate mods.
-
-It also would provide support for exporting loaded assets, which could be incredibly useful as Halo Infinite does not store any data in usable formats.
-Meaning that if users desired to extract a particular mesh/texture/map from the game, they would be able to load & export it to a commonly used file format. Opposed to right now, where users may have to go through a series of complicated steps to extract assets.
-
-The project is currently work in progress, so many features are theoretical for now, however many of the features are already implemented.
-And while this was a community project, it has been mostly developed by myself.
-And has been a great learning experience for C++ & C# software development so far.`,},
-
     // //////////////// //
     // 2022 HIGHLIGHTS //
     // ////////////// //
     example4: {
-        name: "UE5 Marching Cubes",
+        name: "UE5 Proc Gen",
         Date: "2022",
-        Basc: "Marching Cubes Implementation",
+        Basc: "Marching Cubes Project",
         imgp: "Resources/Examples/MC/MC_3.png",
         img1: "Resources/Examples/MC/MC_3.png",
         img2: "Resources/Examples/MC/MC_1.png",
@@ -364,14 +356,13 @@ Which simply put, is an issue where two adjacent cubes might share similar shape
 This time around I designed a solution, resulting in a much better implementation.
 
 Overall, the project turned out rather well. But due to it being built with the Unreal Blueprints language, it did not perform as well as expected.
-Which ultimately marked the end of this project, lest it be reimplemented again in a more performant language.
-`,},
+Which ultimately marked the end of this project, lest it be reimplemented again in a more performant language.`,},
 
 
     example5: {
         name: "Megaloscript RE",
         Date: "2022",
-        Basc: "Megaloscript RE & Documentation",
+        Basc: "Reversal & Documentation",
         imgp: "Resources/Examples/ME/ME_1.png",
         img1: "Resources/Examples/ME/ME_1.png",
         img2: "Resources/Examples/ME/ME_2.png",
@@ -477,7 +468,7 @@ Which allowed me to continually improve the experiences so that everyone could g
     example7: {
         name: "Megalograph",
         Date: "2021",
-        Basc: "Visual Megaloscript Compiler",
+        Basc: "Megaloscript Compiler",
         imgp: "Resources/Examples/MG/MG_2.png",
         img1: "Resources/Examples/MG/MG_2.png",
         img2: "Resources/Examples/MG/MG_3.png",
@@ -516,7 +507,7 @@ All-together this project was great opportunity to explore the C# WPF UI framewo
     example8: {
         name: "IRTV",
         Date: "2021",
-        Basc: "Halo-Infinite Realtime Modding Tool",
+        Basc: "Halo-Infinite Mod Tool",
         imgp: "Resources/Examples/IRTV/IRTV_1.png",
         img1: "Resources/Examples/IRTV/IRTV_1.png",
         img2: "Resources/Examples/IRTV/IRTV_2.png",
@@ -546,7 +537,7 @@ It also provided a great opportunity to learn about meeting and managing the dem
     example9: {
         name: "HPS",
         Date: "2021",
-        Basc: "Halo-MCC Realtime Cosmetics Modifer",
+        Basc: "Halo-MCC Cosmetics tool",
         imgp: "Resources/Examples/HPS/HPS_1.png",
         img1: "Resources/Examples/HPS/HPS_1.png",
         img2: "Resources/Examples/HPS/HPS_2.png",

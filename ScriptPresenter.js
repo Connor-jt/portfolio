@@ -1,6 +1,6 @@
 
 var repo_links = [
-    "https://api.github.com/users/Gamergotten/repos",
+    //"https://api.github.com/users/Gamergotten/repos",
     "https://api.github.com/users/Connor-jt/repos"
     // this lists all the repos
     // full_name : git directory
