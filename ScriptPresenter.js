@@ -1,6 +1,7 @@
 
 var repo_links = [
-    //"https://api.github.com/users/Gamergotten/repos",
+    // //"https://api.github.com/users/Gamergotten/repos", // we dont really need this one + the code is old as
+    // "https://api.github.com/users/Codename-Atriox/repos", // and for this one i think we actually need to update the code to support it, as it handles a little differently
     "https://api.github.com/users/Connor-jt/repos"
     // this lists all the repos
     // full_name : git directory
