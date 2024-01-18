@@ -206,6 +206,7 @@ var Depends = {
     vs_code:            { name: "VS Code",       color: "#44adf3", alt_color: "#2379b2", category: "Development Tool",    usage:"Web Development" },
     unity:              { name: "Unity",         color: "#ffffff", alt_color: "#29333d", category: "Development Tool",    usage:"Game Development" },
     unreal_engine:      { name: "Unreal Engine", color: "#080808", alt_color: "#ffffff", category: "Development Tool",    usage:"Game Development" },
+    godot:              { name: "Godot",         color: "#448abb", alt_color: "#000000", category: "Development Tool",    usage:"Game Development" },
     blender:            { name: "Blender",       color: "#eb7a08", alt_color: "#2d5c8b", category: "Development Tool",    usage:"Game Development" },
 
     ghidra:             { name: "Ghidra",        color: "#e22c22", alt_color: "#ffa11f", category: "Reverse Engineering", usage:"Assembly reversal" },
@@ -220,22 +221,50 @@ var Depends = {
     javascript:         { name: "Javascript",    color: "#efda4d", alt_color: "#302f33", category: "Language",            usage:"Web Development" },
     htmlcss:            { name: "Html/CSS",      color: "#f66637", alt_color: "#1b87c7", category: "Language",            usage:"Web Development" },
     python:             { name: "Python",        color: "#fdcd3d", alt_color: "#3474a9", category: "Language",            usage:"Software Development" },
-    blueprints:         { name: "Blueprints",    color: "#3660d6", alt_color: "#3474a9", category: "Language",            usage:"Game Development" },
+    blueprints:         { name: "Blueprints",    color: "#3660d6", alt_color: "#000000", category: "Language",            usage:"Game Development" },
+    gdscript:           { name: "GDScript",      color: "#448abb", alt_color: "#000000", category: "Language",            usage:"Game Development" },
+    rust:               { name: "Rust",          color: "#f54900", alt_color: "#000000", category: "Language",            usage:"Web Development" },
+    asm:                { name: "Assembly",      color: "#70ac69", alt_color: "#000000", category: "Language",            usage:"Software Development / Reverse engineering" },
+    megalo:             { name: "Megaloscript",  color: "#b28d00", alt_color: "#000000", category: "Language",            usage:"Game Development" },
 
     // frameworks
-    opengl:             { name: "OpenGL",        color: "#ffdec4", alt_color: "#084a86", category: "Framework",           usage:"Software/Game Development" },
-    wpf:                { name: "WPF",           color: "#56177a", alt_color: "#084a86", category: "Framework",           usage:"Software/Game Development" },
-    dear_imgui:         { name: "Dear ImGUI",    color: "#1a272e", alt_color: "#084a86", category: "Framework",           usage:"Software/Game Development" },
-    winforms:           { name: "WinForms",      color: "#c6c6c6", alt_color: "#084a86", category: "Framework",           usage:"Software/Game Development" },
-    directx:            { name: "DirectX",       color: "#1ec200", alt_color: "#084a86", category: "Framework",           usage:"Software/Game Development" },
-    peerjs:             { name: "PeerJS",        color: "#d86800", alt_color: "#084a86", category: "Framework",           usage:"Software/Game Development" },
-    blender_api:        { name: "Blender API",   color: "#eb7a08", alt_color: "#084a86", category: "Framework",           usage:"Software/Game Development" },
-    gamebar_api:        { name: "Gamebar API",   color: "#eb7a08", alt_color: "#084a86", category: "Framework",           usage:"Software/Game Development" },
+    opengl:             { name: "OpenGL",        color: "#ffdec4", alt_color: "#000000", category: "Framework",           usage:"Software/Game Development" },
+    wpf:                { name: "WPF",           color: "#56177a", alt_color: "#000000", category: "Framework",           usage:"Software/Game Development" },
+    dear_imgui:         { name: "Dear ImGUI",    color: "#1a272e", alt_color: "#000000", category: "Framework",           usage:"Software/Game Development" },
+    winforms:           { name: "WinForms",      color: "#c6c6c6", alt_color: "#000000", category: "Framework",           usage:"Software/Game Development" },
+    directx:            { name: "DirectX",       color: "#1ec200", alt_color: "#000000", category: "Framework",           usage:"Software/Game Development" },
+    peerjs:             { name: "PeerJS",        color: "#d86800", alt_color: "#000000", category: "Framework",           usage:"Software/Game Development" },
+    blender_api:        { name: "Blender API",   color: "#eb7a08", alt_color: "#000000", category: "Framework",           usage:"Software/Game Development" },
+    gamebar_api:        { name: "Gamebar API",   color: "#107c10", alt_color: "#000000", category: "Framework",           usage:"Software/Game Development" },
+    wasm:               { name: "Web Assembly",  color: "#6751f4", alt_color: "#000000", category: "Framework",           usage:"Web Development" },
 }
 
 
 
 var Projects ={
+    // //////////////// //
+    // 2024 HIGHLIGHTS //
+    // ////////////// //
+    example10: {
+        name: "Rust Engine",
+        Date: "2024",
+        Basc: "Assembly code Reader",
+        imgp: "Resources/Examples/AR/AR_1.png",
+        img1: "Resources/Examples/AR/AR_1.png",
+        img2: "Resources/Examples/AR/AR_2.png",
+        img3: "Resources/Examples/AR/AR_3.png",
+        deps: ["vs_code","htmlcss","javascript","python","rust","asm","wasm"],
+        Desc: 
+`Rust Engine is a simplistic program designed to read compiled assembly/machine code.
+[to be continued]
+        
+        
+        
+`},
+
+
+
+
     // //////////////// //
     // 2023 HIGHLIGHTS //
     // ////////////// //
@@ -358,61 +387,61 @@ This time around I designed a solution, resulting in a much better implementatio
 Overall, the project turned out rather well. But due to it being built with the Unreal Blueprints language, it did not perform as well as expected.
 Which ultimately marked the end of this project, lest it be reimplemented again in a more performant language.`,},
 
+// removed as we're going to merge this in with the megalo mods section
+//     example5: {
+//         name: "Megaloscript RE",
+//         Date: "2022",
+//         Basc: "Reversal & Documentation",
+//         imgp: "Resources/Examples/ME/ME_1.png",
+//         img1: "Resources/Examples/ME/ME_1.png",
+//         img2: "Resources/Examples/ME/ME_2.png",
+//         img3: "Resources/Examples/ME/ME_3.png",
+//         deps: ["ghidra","x64dbg"],
+//         Desc: 
+// `To conclude my time spent learning Megaloscript (a language native to various Halo games), I reverse engineered unknown machine code & then released documentation for the majority of the language.
+// Featuring a full 60-page document, Covering almost every notable aspect of Megaloscript.
 
-    example5: {
-        name: "Megaloscript RE",
-        Date: "2022",
-        Basc: "Reversal & Documentation",
-        imgp: "Resources/Examples/ME/ME_1.png",
-        img1: "Resources/Examples/ME/ME_1.png",
-        img2: "Resources/Examples/ME/ME_2.png",
-        img3: "Resources/Examples/ME/ME_3.png",
-        deps: ["ghidra","x64dbg"],
-        Desc: 
-`To conclude my time spent learning Megaloscript (a language native to various Halo games), I reverse engineered unknown machine code & then released documentation for the majority of the language.
-Featuring a full 60-page document, Covering almost every notable aspect of Megaloscript.
+// The reverse engineering was mostly targeted at converting the machine code into human readable code.
+// Which first started off with simple things like understanding how the compiled code was processed in game.
+// Next up was investigating opcodes that did either nothing or didn't work as expected, and as it would turn out some of them were intentionally disabled by the developers.
+// In fact, I discovered a fair few mistakes that I was able to contact the developers about and let them know exactly what the problem was.
+// Allowing them to rapidly fix the issues.
 
-The reverse engineering was mostly targeted at converting the machine code into human readable code.
-Which first started off with simple things like understanding how the compiled code was processed in game.
-Next up was investigating opcodes that did either nothing or didn't work as expected, and as it would turn out some of them were intentionally disabled by the developers.
-In fact, I discovered a fair few mistakes that I was able to contact the developers about and let them know exactly what the problem was.
-Allowing them to rapidly fix the issues.
+// There were a lot of interesting things that were discovered about the language, upon unscrambling the machine code that interprets it.
+// For example, a unique code compression technique was discovered, which utilizes null actions & conditions to adjust relative offsets of the following conditions & actions. 
+// Meaning the functions can share the same bytes of code, but with different arrangements.
+// However, that technique is only theoretical and untested in practice, so may be flawed.
 
-There were a lot of interesting things that were discovered about the language, upon unscrambling the machine code that interprets it.
-For example, a unique code compression technique was discovered, which utilizes null actions & conditions to adjust relative offsets of the following conditions & actions. 
-Meaning the functions can share the same bytes of code, but with different arrangements.
-However, that technique is only theoretical and untested in practice, so may be flawed.
+// Finally came the documentation. 
+// While there was already good documentation out there for a Megaloscript variant, that only covered content for somewhat experienced users.
+// The intention with my documentation was to provide a source of knowledge that could benefit users of any level, all the way from just beginning to the most advanced.
 
-Finally came the documentation. 
-While there was already good documentation out there for a Megaloscript variant, that only covered content for somewhat experienced users.
-The intention with my documentation was to provide a source of knowledge that could benefit users of any level, all the way from just beginning to the most advanced.
+// Within the documentation is a brief history of the language - what I managed to learn about it,
+// Variables and how they work (variable limits, semi object oriented variable storage system),
+// The syntactic/compiled code structures, how plaintext code is compiled, best practice code optimizations.
+// Most importantly it covers all code techniques that drastically expand the language's capabilities.
 
-Within the documentation is a brief history of the language - what I managed to learn about it,
-Variables and how they work (variable limits, semi object oriented variable storage system),
-The syntactic/compiled code structures, how plaintext code is compiled, best practice code optimizations.
-Most importantly it covers all code techniques that drastically expand the language's capabilities.
+// This ranges from things as simple as techniques to create smooth object movement, to bypassing synchronized states between multiplayer clients.
+// For context, a large quantity of things are synchronized between every user in a Halo multiplayer session (like visible objects, variables, etc).
+// By breaking synchronization, you can achieve so many things that were never possible. Which can be achieved by finding a player state that does not synchronize between clients and using that to identify the local player.
+// As if that state does not synchronize, then the state can only exist for the local client's player, allowing us to determine which in game player is the local one.
+// We can then use simple logic gates and synchronized states to feed data from the server to selected clients (through synchronized player states), where previously it was only ever possible to feed data to all clients simultaneously.
 
-This ranges from things as simple as techniques to create smooth object movement, to bypassing synchronized states between multiplayer clients.
-For context, a large quantity of things are synchronized between every user in a Halo multiplayer session (like visible objects, variables, etc).
-By breaking synchronization, you can achieve so many things that were never possible. Which can be achieved by finding a player state that does not synchronize between clients and using that to identify the local player.
-As if that state does not synchronize, then the state can only exist for the local client's player, allowing us to determine which in game player is the local one.
-We can then use simple logic gates and synchronized states to feed data from the server to selected clients (through synchronized player states), where previously it was only ever possible to feed data to all clients simultaneously.
+// Thats the kind of techniques featured in the documentation, fully detailed with ready to go sample code provided.
+// And of course, things that were discovered with reversal were also featured, bugs, discoveries, and all that.
 
-Thats the kind of techniques featured in the documentation, fully detailed with ready to go sample code provided.
-And of course, things that were discovered with reversal were also featured, bugs, discoveries, and all that.
-
-This project was a good learning experience for machine code reversal, and then the documentation of findings.`,},
+// This project was a good learning experience for machine code reversal, and then the documentation of findings.`,},
 
 
     example6: {
-        name: "Megaloscript Mods",
+        name: "Megaloscripting",
         Date: "2022",
-        Basc: "Popular Megaloscript Mods",
+        Basc: "My Megaloscript Mods",
         imgp: "Resources/Examples/MS/MS_1.png",
         img1: "Resources/Examples/MS/MS_1.png",
         img2: "Resources/Examples/MS/MS_2.png",
         img3: "Resources/Examples/MS/MS_3.png",
-        deps: ["vs_code"],
+        deps: ["vs_code","megalo"],
         Desc: 
 `After gaining expertise in the Megaloscript languages, i started working on more ambitious Megaloscript projects.
 The goal of these projects were to bring entirely new & unique experiences to all players of Halo MCC.
@@ -473,7 +502,7 @@ Which allowed me to continually improve the experiences so that everyone could g
         img1: "Resources/Examples/MG/MG_2.png",
         img2: "Resources/Examples/MG/MG_3.png",
         img3: "Resources/Examples/MG/MG_1.png",
-        deps: ["visual_studio","csharp","wpf", "hxd"],
+        deps: ["visual_studio","csharp","wpf", "hxd","megalo"],
         Desc: 
 `Megalograph is a fully graphical code compiler & decompiler targeted towards the propriety (Halo) Megaloscript language. Supporting 3 unique variants of the target language.
 To allow this, Megalograph hosts its own unique node-based programming language, which can be called "Megalograph". Which can be decompiled/compiled to any of those 3 Megaloscript variants.
