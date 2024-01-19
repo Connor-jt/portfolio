@@ -248,18 +248,28 @@ var Projects ={
     example10: {
         name: "Rust Engine",
         Date: "2024",
-        Basc: "Assembly code Reader",
+        Basc: "Assembly Reader",
         imgp: "Resources/Examples/AR/AR_1.png",
         img1: "Resources/Examples/AR/AR_1.png",
         img2: "Resources/Examples/AR/AR_2.png",
         img3: "Resources/Examples/AR/AR_3.png",
         deps: ["vs_code","htmlcss","javascript","python","rust","asm","wasm"],
         Desc: 
-`Rust Engine is a simplistic program designed to read compiled assembly/machine code.
-[to be continued]
-        
-        
-        
+`Rust Engine is a simplistic program designed to read compiled assembly/machine code from windows executable files.
+Originally, it was intended to emulate the functionality of the x86 processor, effectively being capable of running any regular desktop programs.
+Additionally, it would be operating from within a web based environment, allowing it to run on any platform capable of running a standard web browser.
+The program itself wouldn’t be incredibly useful for this purpose, as there are likely already numerous programs out there for that purpose, but it was the knowledge to be learned that was the primary goal. Exe file formats, how assembly bytecode works, CPU instruction optimizations, etc.
+The project itself was based around the concept of using one of web development’s more recent languages, Web Assembly, to achieve a highly performant & efficient program. 
+Performance of course, would be key for this program to be any use at all, slow response times would drastically decrease functionality & drastically decrease the rate at which users could interact with the built in console.
+For this reason, it was necessary to have all the functionality contained within the web assembly portion of the program, with minor things like user input handled by the front end and then passed along. 
+So a fair amount of abstraction and problem solving was required, which resulted in having the entire program be run & rendered to a pixel buffer via web assembly, and then having that buffer passed back to the front end to have it draw the image, resulting in a very fluid & efficient implementation.
+The interesting thing about drawing the entire program pixel by pixel was being able to draw characters/letters, and fonts typically don’t come in image files. 
+So, to account for this, I devised my own font format that would allow me to design my own characters and convert each of them into an array of pixel coordinates, which could be efficiently indexed and drawn.
+The biggest problem with this project was the magnitude of the task… [to be continued]
+
+
+
+
 `},
 
 
