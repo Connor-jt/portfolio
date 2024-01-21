@@ -255,22 +255,37 @@ var Projects ={
         img3: "Resources/Examples/AR/AR_3.png",
         deps: ["vs_code","htmlcss","javascript","python","rust","asm","wasm"],
         Desc: 
-`Rust Engine is a simplistic program designed to read compiled assembly/machine code from windows executable files.
+`Rust Engine is a simplistic web program designed to read compiled assembly/machine code from windows executable files.
+
 Originally, it was intended to emulate the functionality of the x86 processor, effectively being capable of running any regular desktop programs.
-Additionally, it would be operating from within a web based environment, allowing it to run on any platform capable of running a standard web browser.
-The program itself wouldn’t be incredibly useful for this purpose, as there are likely already numerous programs out there for that purpose, but it was the knowledge to be learned that was the primary goal. Exe file formats, how assembly bytecode works, CPU instruction optimizations, etc.
-The project itself was based around the concept of using one of web development’s more recent languages, Web Assembly, to achieve a highly performant & efficient program. 
-Performance of course, would be key for this program to be any use at all, slow response times would drastically decrease functionality & drastically decrease the rate at which users could interact with the built in console.
+Additionally, it would be operating from within a web based environment, allowing it to run on any platform with a standard web browser.
+
+The program itself wouldn't be incredibly useful for this purpose, as there are likely already numerous programs out there for that purpose, but it was the knowledge to be learned that was the primary goal. Exe file formats, how assembly bytecode works, CPU instruction optimizations, etc.
+
+
+The project itself was based around the concept of using one of web development's more recent languages, Web Assembly, to achieve a highly performant & efficient program. 
+Performance of course, would be key for this program to be any use at all, slow response times would drastically decrease functionality & drastically decrease the rate at which users could interact with the program's console.
 For this reason, it was necessary to have all the functionality contained within the web assembly portion of the program, with minor things like user input handled by the front end and then passed along. 
 So a fair amount of abstraction and problem solving was required, which resulted in having the entire program be run & rendered to a pixel buffer via web assembly, and then having that buffer passed back to the front end to have it draw the image, resulting in a very fluid & efficient implementation.
-The interesting thing about drawing the entire program pixel by pixel was being able to draw characters/letters, and fonts typically don’t come in image files. 
-So, to account for this, I devised my own font format that would allow me to design my own characters and convert each of them into an array of pixel coordinates, which could be efficiently indexed and drawn.
-The biggest problem with this project was the magnitude of the task… [to be continued]
+
+The interesting thing about drawing the entire program pixel by pixel was being able to draw characters/letters, and fonts typically don't come in image files. 
+So, to account for this, I devised my own font data that would allow me to design my own characters and convert each of them into an array of pixel coordinates, which could be efficiently indexed and drawn.
+
+The biggest problem with this project was that while it was an achievable concept, the required amount of work didn't match the desired timeline for this project.
+Which inevitably lead to minimizing the scope of this project, which meant disregarding the ability to execute interpreted code & replacing it with the functionality to print the code into a human readable format instead.
+
+The rest of the project turned out pretty much as expected, the console interface rendered pixel by pixel with inputs, outputs & errors. Frontend user interface powered by JavaScript, for user inputs & file handling.
+Even the assembly turned out to be relatively straightforward to interpret, I simply used some JavaScript to convert an online database of assembly instructions into usable rust code. The code would allow me to read 3 adjacent bytes and return the details of the assembly code within those bytes, further data like offsets & registers would usually be read outside of those bytes though.
+The main assembly interpreter would start at a loaded exe file's entry point (defined by the executable header) and then would read instructions one by one, increasing the instruction pointer with each instruction.
+
+The program itself offers several useful functions that make it easier to navigate an exe's bytecode, namely: 'offs', 'rip', & 'read'
+The first two would allow either setting the exact instruction address, or offsetting the current address. The read function allows printing the byte contents from a specified address without reading any instructions, which is a crucial feature for debugging any inconsistencies that may exist with the program's assembly database.
 
 
+Ultimately, leveraging several different languages for this project allowed me to easily achieve what I sought. JavaScript for frontend & converting instruction data from the web, Python for processing raw files & Rust for efficient code.
+Although from the results, it felt almost entirely unnecessary to use Rust (compiled to web assembly) as the program did operate rather fast, but not so fast that it could likely be comparable to JavaScript in speed.
 
-
-`},
+As per the primary goal of this project, there was quite a bit to learn about compiled assembly code & executable files, and I can say that I feel fairly confident in my understanding of it now, and will maybe be able to apply that knowledge to some deeper projects in the future.`},
 
 
 
