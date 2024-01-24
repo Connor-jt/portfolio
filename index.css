@@ -10,7 +10,15 @@ body.light-mode{
     color: black;
     background-color: #f0f0f0;
 }
-
+.fullscreen{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    padding: 60px;
+    background-color: #00000080;
+}
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -313,7 +321,15 @@ body.light-mode{
     width: calc(100% - 5px);
     aspect-ratio: 2 / 1;
     background-color: #080808;
+    border: 1px solid black;
+    transition: border-color 150ms linear;
     overflow: hidden;
+}
+.c_i_i_focusframe:hover{
+    border-color: rgb(197, 197, 197);
+}
+.c_i_i_focusframe:active{
+    border-color: white;
 }
 .light-mode .c_i_i_focusframe{
     background-color: rgb(230, 230, 230);

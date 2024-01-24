@@ -84,6 +84,15 @@ function select_image2(){
 function select_image3(){
     select_image("focus_img3", "focus_frame3");
 }
+function select_fullscreen(){
+    let focus_imgF = document.getElementById("focus_imgF");
+    document.getElementById("fullscreen_img_border").style.visibility = "visible";
+    document.getElementById("fullscreen_img").src = focus_imgF.src;
+}
+function escape_fullscreen(){ // either by clicking or esc?
+    document.getElementById("fullscreen_img_border").style.visibility = "collapse";
+    document.getElementById("fullscreen_img").src = "";
+}
 
 var last_selected_frame = undefined;
 function select_image(image_id, frame){
@@ -249,6 +258,9 @@ var Projects ={
         name: "Rust Engine",
         Date: "2024",
         Basc: "Assembly Reader",
+        Edit: "Jan 24th 2023",
+        Link: [{desc:"demo", type:"youtube", link:"https://www.youtube.com/watch?v=MC_tofnZsRo"},
+               {desc:"source", type:"github", link:"https://github.com/Connor-jt/wasm-engine"}],
         imgp: "Resources/Examples/AR/AR_1.png",
         img1: "Resources/Examples/AR/AR_1.png",
         img2: "Resources/Examples/AR/AR_2.png",
@@ -297,6 +309,10 @@ As per the primary goal of this project, there was quite a bit to learn about co
         name: "Codename Atriox",
         Date: "2023",
         Basc: "Slipspace mod tools",
+        Edit: "Jan 24th 2023",
+        Link: [{desc:"basic demo", type:"youtube", link:"https://www.youtube.com/watch?v=IAZV11uO2vM"},
+               {desc:"advanced demo", type:"youtube", link:"https://www.youtube.com/watch?v=cD979uZTxe8"},
+               {desc:"source", type:"github", link:"https://github.com/orgs/Codename-Atriox/repositories"}],
         imgp: "Resources/Examples/CA/CA_1.png",
         img1: "Resources/Examples/CA/CA_1.png",
         img2: "Resources/Examples/CA/CA_2.png",
@@ -340,6 +356,9 @@ example2: {
     name: "Javasqiggle",
     Date: "2023",
     Basc: "Multiplayer Web Game",
+    Edit: "Jan 24th 2023",
+    Link: [{desc:"demo", type:"youtube", link:"https://www.youtube.com/watch?v=ETITCZBJEp8"},
+           {desc:"source", type:"github", link:"https://github.com/Connor-jt/JavaSqiggle"}],
     imgp: "Resources/Examples/JS/JS_1.png",
     img1: "Resources/Examples/JS/JS_1.png",
     img2: "Resources/Examples/JS/JS_2.png",
@@ -379,9 +398,12 @@ As per the goal of this project, I gained a lot of experience in web development
     // 2022 HIGHLIGHTS //
     // ////////////// //
     example4: {
-        name: "UE5 Proc Gen",
+        name: "UE5 voxels",
         Date: "2022",
-        Basc: "Marching Cubes Project",
+        Basc: "terrain generator",
+        Edit: "Jan 24th 2023",
+        Link: [{desc:"in engine demo", type:"youtube", link:"https://www.youtube.com/watch?v=iddGwBH25kE"},
+               {desc:"tech explanation", type:"youtube", link:"https://www.youtube.com/watch?v=aL0p8CMEh3g"},],
         imgp: "Resources/Examples/MC/MC_3.png",
         img1: "Resources/Examples/MC/MC_3.png",
         img2: "Resources/Examples/MC/MC_1.png",
@@ -462,6 +484,9 @@ Which ultimately marked the end of this project, lest it be reimplemented again 
         name: "Megaloscripting",
         Date: "2022",
         Basc: "My Megaloscript Mods",
+        Edit: "Jan 24th 2023",
+        Link: [{desc:"demos", type:"youtube", link:"https://www.youtube.com/@gamergotten/videos"},
+               {desc:"source", type:"github", link:"https://github.com/Gamergotten/RVT-Gametypes"}],
         imgp: "Resources/Examples/MS/MS_1.png",
         img1: "Resources/Examples/MS/MS_1.png",
         img2: "Resources/Examples/MS/MS_2.png",
@@ -523,6 +548,9 @@ Which allowed me to continually improve the experiences so that everyone could g
         name: "Megalograph",
         Date: "2021",
         Basc: "Megaloscript Compiler",
+        Edit: "Jan 24th 2023",
+        Link: [{desc:"demo", type:"youtube", link:"https://www.youtube.com/watch?v=2KovZYexA7w"},
+               {desc:"source", type:"github", link:"https://github.com/Gamergotten/Megalograph"}],
         imgp: "Resources/Examples/MG/MG_2.png",
         img1: "Resources/Examples/MG/MG_2.png",
         img2: "Resources/Examples/MG/MG_3.png",
@@ -562,6 +590,9 @@ All-together this project was great opportunity to explore the C# WPF UI framewo
         name: "IRTV",
         Date: "2021",
         Basc: "Halo-Infinite Mod Tool",
+        Edit: "Jan 24th 2023",
+        Link: [{desc:"random creations", type:"youtube", link:"https://www.youtube.com/watch?v=-WL5zU1mXcE&list=PLHq7Y0BiaVnbRmMFdWTRVQJzXwLZHYMUF"},
+               {desc:"source", type:"github", link:"https://github.com/Gamergotten/Infinite-runtime-tagviewer"}],
         imgp: "Resources/Examples/IRTV/IRTV_1.png",
         img1: "Resources/Examples/IRTV/IRTV_1.png",
         img2: "Resources/Examples/IRTV/IRTV_2.png",
@@ -591,7 +622,9 @@ It also provided a great opportunity to learn about meeting and managing the dem
     example9: {
         name: "HPS",
         Date: "2021",
-        Basc: "Halo-MCC Cosmetics tool",
+        Basc: "H:MCC Cosmetics tool",
+        Edit: "Jan 24th 2023",
+        Link: [{desc:"source", type:"github", link:"https://github.com/COZITIME/HaloPogSwitch"}],
         imgp: "Resources/Examples/HPS/HPS_1.png",
         img1: "Resources/Examples/HPS/HPS_1.png",
         img2: "Resources/Examples/HPS/HPS_2.png",

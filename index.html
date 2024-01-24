@@ -85,7 +85,7 @@
                                 <span class="c_i_h_date" id="focus_date">2020</span>
                                 <span class="c_i_overview" id="focus_overview">Basic Overview</span>
                             </div>
-                            <div class="c_i_i_focusframe">
+                            <div class="c_i_i_focusframe" onclick="select_fullscreen()">
                                 <img class="c_i_i_f_img_preview" id="focus_imgF" src="">
                             </div>
                             <div class="c_i_images">
@@ -114,6 +114,8 @@
 
         </div>
 
-
+        <div id="fullscreen_img_border" style="visibility: collapse;" class="fullscreen" onclick="escape_fullscreen()">
+            <img class="c_i_i_f_img_preview" id="fullscreen_img" src="">
+        </div>
     </body>
 </html>
