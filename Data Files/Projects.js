@@ -41,6 +41,7 @@ function expand_target_item(item){
 
     document.getElementById("focus_title").innerText = project.name;
     document.getElementById("focus_date").innerText = project.Date;
+    document.getElementById("timestamp").innerText = project.Edit;
 
     document.getElementById("focus_overview").innerText = project.Basc;
     document.getElementById("focus_desc").innerText = project.Desc;

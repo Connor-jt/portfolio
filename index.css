@@ -277,6 +277,16 @@ body.light-mode{
 .c_focused_item_shrink{
     height: 0px;
 }
+.c_f_i_media{
+    margin-top: 1px;
+    margin-bottom: 10px;
+}
+.c_f_i_time{
+    color: #adadad;
+    margin-top: 1px;
+    margin-bottom: 10px;
+    font-size: 10;
+}
 .c_f_i_desc{
     color: #E0E0E0;
     font-size: 13;
@@ -404,6 +414,7 @@ body.light-mode{
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    margin-bottom: 5px;
 }
 .c_i_h_name{
     font-size: 20px;
