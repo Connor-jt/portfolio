@@ -30,9 +30,9 @@ function toggle_pause(){
         if (container == null) return;
         while(container.hasChildNodes()) container.removeChild(container.lastChild);
         // then update toggle button text
-        anims_button.innerText = "Animations off"
+        anims_button.innerText = "Animations Off"
     } else
-        anims_button.innerText = "Animations on"
+        anims_button.innerText = "Animations On"
 }
 function unpause(){
 }

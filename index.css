@@ -200,7 +200,6 @@ body.light-mode{
     display:inline-block;
     position: relative;
     vertical-align: middle;
-    line-height: 10px;
     margin-right: 10px;
 }
 
@@ -210,6 +209,21 @@ body.light-mode{
 .content{
     height: fit-content;
 }
+.c_toggle{
+    background-color: transparent;
+    color: inherit;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    transition: border-color 150ms linear;
+}
+.c_toggle:hover{
+    border-color: gray;
+}
+.c_toggle:active{
+    border-color: white;
+}
+
+
 .c_header{
     position: relative;
     text-align: left;
@@ -364,6 +378,7 @@ body.light-mode{
     width: 15px;
     height: 15px;
     margin-right: 5px;
+    vertical-align: middle;
 }
 
 /* ///////////// //
