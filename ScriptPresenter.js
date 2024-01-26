@@ -21,6 +21,21 @@ var error_log = [];
 var repos_loaded = [];
 
 var is_awaiting_response = false;
+var is_paused = false;
+function toggle_pause(){
+    is_paused = !is_paused;
+    let anims_button = document.getElementById("animation_toggle")
+    if (is_paused){ // if its now paused, then do the pause stuff
+        // first clear all the entries inside the background
+        if (container == null) return;
+        while(container.hasChildNodes()) container.removeChild(container.lastChild);
+        // then update toggle button text
+        anims_button.innerText = "Animations off"
+    } else
+        anims_button.innerText = "Animations on"
+}
+function unpause(){
+}
 
 function load_repos(link){
 
@@ -130,6 +145,7 @@ var lines_to_delete = 0;
 const chars_per_tick = 2;
 
 function write_loop_loop(){
+    if (is_paused) return;
     for (let i = 0; i < chars_per_tick; i++)
         write_loop();
 }

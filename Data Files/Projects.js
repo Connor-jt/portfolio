@@ -11,14 +11,19 @@ function config_trio_image(ui, src){
     let img = ui.firstElementChild;
     if (src != null && src != ""){
         ui.className = "c_i_i_t_interactive c_i_i_trioframe";
-        img.src = null;
-        img.src = src;
+        img.src = "";
+        update_img_later(img, src)
         img.style["display"] = "inline-block";
     } else {
         ui.className = "c_i_i_trioframe";
-        img.src = null;
+        img.src = "";
         img.style["display"] = "none";
 }}
+const delay = ms => new Promise(res => setTimeout(res, ms));
+async function update_img_later(img, new_src){
+    await delay(30);
+    img.src = new_src;
+}
 function expand_item(){
     expand_target_item(this);
 }
@@ -53,7 +58,10 @@ function expand_target_item(item){
     config_trio_image(document.getElementById("focus_frame3"), project.img3);
 
     // reset selected image status
-    select_image1();
+    select_image1(true);
+    // and then because we wait a frame for the image to properly refresh, we have to manually set the focused image
+    let focus_imgF = document.getElementById("focus_imgF");
+    focus_imgF.src = project.img1;
 
     // cleanup previous tags if any
     let tag_container = document.getElementById('focus_tags');
@@ -65,6 +73,36 @@ function expand_target_item(item){
         let dependency = Depends[dependency_name];
         tag_container.appendChild(create_tag(dependency.name, dependency.color, dependency.alt_color));
     }
+    
+    // cleanup any previous media links
+    let media_container = document.getElementById('media_links');
+    while(media_container.hasChildNodes())
+        media_container.removeChild(media_container.lastChild);
+    // init new media links
+    for (let media_key in project.Link){
+        let media = project.Link[media_key]
+        // construct new media thing
+        let wrapper = document.createElement('a');
+        wrapper.href = media.url;
+        //wrapper.style = "text-decoration:none;color:white;"
+        wrapper.style = "color:#69a020;"
+        let block = document.createElement('div');
+        let text = document.createElement('u');
+        block.className = "mediabox";
+        text.innerText = media.desc;
+        let image = document.createElement('img');
+        image.className = "c_i_i_f_media_img"
+        if (media.type === "youtube")     image.src = "Resources\\Icons\\yt.png";
+        else if (media.type === "github") image.src = "Resources\\Icons\\gh.png";
+        block.appendChild(image)
+        block.appendChild(text)
+
+
+
+        wrapper.appendChild(block)
+        media_container.appendChild(wrapper);
+    }
+
 
     if (!panel_was_open){
         focus_panel.classList.remove("c_focused_item_shrink");
@@ -76,14 +114,14 @@ function minimize_item(item){
     item.removeAttribute("style"); // this will clear the forced selected visual effect
     currently_expanded_item = undefined;
 }
-function select_image1(){
-    select_image("focus_img1", "focus_frame1");
+function select_image1(force_set){
+    select_image("focus_img1", "focus_frame1", force_set);
 }
-function select_image2(){
-    select_image("focus_img2", "focus_frame2");
+function select_image2(force_set){
+    select_image("focus_img2", "focus_frame2", force_set);
 }
-function select_image3(){
-    select_image("focus_img3", "focus_frame3");
+function select_image3(force_set){
+    select_image("focus_img3", "focus_frame3", force_set);
 }
 function select_fullscreen(){
     let focus_imgF = document.getElementById("focus_imgF");
@@ -96,10 +134,13 @@ function escape_fullscreen(){ // either by clicking or esc?
 }
 
 var last_selected_frame = undefined;
-function select_image(image_id, frame){
+function select_image(image_id, frame, force_set){
     let focus_imgF = document.getElementById("focus_imgF");
     let new_src = document.getElementById(image_id);
     let new_frame = document.getElementById(frame);
+
+    if (force_set != true && (new_src.src == "" || new_src.src == null))
+        return; // if we tried to select an image with no source, then dont bother selecting it?
 
     if (new_src.style["display"] == "none") 
         return;
@@ -260,8 +301,8 @@ var Projects ={
         Date: "2024",
         Basc: "Assembly Reader",
         Edit: "Jan 24th 2023",
-        Link: [{desc:"demo", type:"youtube", link:"https://www.youtube.com/watch?v=MC_tofnZsRo"},
-               {desc:"source", type:"github", link:"https://github.com/Connor-jt/wasm-engine"}],
+        Link: [{desc:"demo", type:"youtube", url:"https://www.youtube.com/watch?v=MC_tofnZsRo"},
+               {desc:"source", type:"github", url:"https://github.com/Connor-jt/wasm-engine"}],
         imgp: "Resources/Examples/AR/AR_1.png",
         img1: "Resources/Examples/AR/AR_1.png",
         img2: "Resources/Examples/AR/AR_2.png",
@@ -311,9 +352,9 @@ As per the primary goal of this project, there was quite a bit to learn about co
         Date: "2023",
         Basc: "Slipspace mod tools",
         Edit: "Jan 24th 2023",
-        Link: [{desc:"basic demo", type:"youtube", link:"https://www.youtube.com/watch?v=IAZV11uO2vM"},
-               {desc:"advanced demo", type:"youtube", link:"https://www.youtube.com/watch?v=cD979uZTxe8"},
-               {desc:"source", type:"github", link:"https://github.com/orgs/Codename-Atriox/repositories"}],
+        Link: [{desc:"basic demo", type:"youtube", url:"https://www.youtube.com/watch?v=IAZV11uO2vM"},
+               {desc:"advanced demo", type:"youtube", url:"https://www.youtube.com/watch?v=cD979uZTxe8"},
+               {desc:"source", type:"github", url:"https://github.com/orgs/Codename-Atriox/repositories"}],
         imgp: "Resources/Examples/CA/CA_1.png",
         img1: "Resources/Examples/CA/CA_1.png",
         img2: "Resources/Examples/CA/CA_2.png",
@@ -358,8 +399,8 @@ example2: {
     Date: "2023",
     Basc: "Multiplayer Web Game",
     Edit: "Jan 24th 2023",
-    Link: [{desc:"demo", type:"youtube", link:"https://www.youtube.com/watch?v=ETITCZBJEp8"},
-           {desc:"source", type:"github", link:"https://github.com/Connor-jt/JavaSqiggle"}],
+    Link: [{desc:"demo", type:"youtube", url:"https://www.youtube.com/watch?v=ETITCZBJEp8"},
+           {desc:"source", type:"github", url:"https://github.com/Connor-jt/JavaSqiggle"}],
     imgp: "Resources/Examples/JS/JS_1.png",
     img1: "Resources/Examples/JS/JS_1.png",
     img2: "Resources/Examples/JS/JS_2.png",
@@ -403,8 +444,8 @@ As per the goal of this project, I gained a lot of experience in web development
         Date: "2022",
         Basc: "terrain generator",
         Edit: "Jan 24th 2023",
-        Link: [{desc:"in engine demo", type:"youtube", link:"https://www.youtube.com/watch?v=iddGwBH25kE"},
-               {desc:"tech explanation", type:"youtube", link:"https://www.youtube.com/watch?v=aL0p8CMEh3g"},],
+        Link: [{desc:"in engine demo", type:"youtube", url:"https://www.youtube.com/watch?v=iddGwBH25kE"},
+               {desc:"tech explanation", type:"youtube", url:"https://www.youtube.com/watch?v=aL0p8CMEh3g"},],
         imgp: "Resources/Examples/MC/MC_3.png",
         img1: "Resources/Examples/MC/MC_3.png",
         img2: "Resources/Examples/MC/MC_1.png",
@@ -486,8 +527,8 @@ Which ultimately marked the end of this project, lest it be reimplemented again 
         Date: "2022",
         Basc: "My Megaloscript Mods",
         Edit: "Jan 24th 2023",
-        Link: [{desc:"demos", type:"youtube", link:"https://www.youtube.com/@gamergotten/videos"},
-               {desc:"source", type:"github", link:"https://github.com/Gamergotten/RVT-Gametypes"}],
+        Link: [{desc:"demos", type:"youtube", url:"https://www.youtube.com/@gamergotten/videos"},
+               {desc:"source", type:"github", url:"https://github.com/Gamergotten/RVT-Gametypes"}],
         imgp: "Resources/Examples/MS/MS_1.png",
         img1: "Resources/Examples/MS/MS_1.png",
         img2: "Resources/Examples/MS/MS_2.png",
@@ -550,8 +591,8 @@ Which allowed me to continually improve the experiences so that everyone could g
         Date: "2021",
         Basc: "Megaloscript Compiler",
         Edit: "Jan 24th 2023",
-        Link: [{desc:"demo", type:"youtube", link:"https://www.youtube.com/watch?v=2KovZYexA7w"},
-               {desc:"source", type:"github", link:"https://github.com/Gamergotten/Megalograph"}],
+        Link: [{desc:"demo", type:"youtube", url:"https://www.youtube.com/watch?v=2KovZYexA7w"},
+               {desc:"source", type:"github", url:"https://github.com/Gamergotten/Megalograph"}],
         imgp: "Resources/Examples/MG/MG_2.png",
         img1: "Resources/Examples/MG/MG_2.png",
         img2: "Resources/Examples/MG/MG_3.png",
@@ -592,8 +633,8 @@ All-together this project was great opportunity to explore the C# WPF UI framewo
         Date: "2021",
         Basc: "Halo-Infinite Mod Tool",
         Edit: "Jan 24th 2023",
-        Link: [{desc:"random creations", type:"youtube", link:"https://www.youtube.com/watch?v=-WL5zU1mXcE&list=PLHq7Y0BiaVnbRmMFdWTRVQJzXwLZHYMUF"},
-               {desc:"source", type:"github", link:"https://github.com/Gamergotten/Infinite-runtime-tagviewer"}],
+        Link: [{desc:"random creations", type:"youtube", url:"https://www.youtube.com/watch?v=-WL5zU1mXcE&list=PLHq7Y0BiaVnbRmMFdWTRVQJzXwLZHYMUF"},
+               {desc:"source", type:"github", url:"https://github.com/Gamergotten/Infinite-runtime-tagviewer"}],
         imgp: "Resources/Examples/IRTV/IRTV_1.png",
         img1: "Resources/Examples/IRTV/IRTV_1.png",
         img2: "Resources/Examples/IRTV/IRTV_2.png",
@@ -625,7 +666,7 @@ It also provided a great opportunity to learn about meeting and managing the dem
         Date: "2021",
         Basc: "H:MCC Cosmetics tool",
         Edit: "Jan 24th 2023",
-        Link: [{desc:"source", type:"github", link:"https://github.com/COZITIME/HaloPogSwitch"}],
+        Link: [{desc:"source", type:"github", url:"https://github.com/COZITIME/HaloPogSwitch"}],
         imgp: "Resources/Examples/HPS/HPS_1.png",
         img1: "Resources/Examples/HPS/HPS_1.png",
         img2: "Resources/Examples/HPS/HPS_2.png",

@@ -59,6 +59,7 @@
                     <div class="c_header">
                         <div class="c_h_left">
                             <button onclick="toggle_theme()">theme</button>
+                            <button id="animation_toggle" onclick="toggle_pause()">animation on</button>
                             <span style="color: #9c9c9c;">ct770a@gmail.com</span>
                             <span style="color: #6a6a6a;"> - </span>
                             <span style="color: #9c9c9c;" id="repo_text">0 repositiories</span>
@@ -89,17 +90,17 @@
                                 <img class="c_i_i_f_img_preview" id="focus_imgF" src="">
                             </div>
                             <div class="c_i_images">
-                                <button class="c_i_i_trioframe c_i_i_t_interactive" id="focus_frame1" onclick="select_image1()">
+                                <button class="c_i_i_trioframe c_i_i_t_interactive" id="focus_frame1" onclick="select_image1(false)">
                                     <img class="c_i_img_preview" id="focus_img1" src="">
                                 </button>
-                                <button class="c_i_i_trioframe c_i_i_t_interactive" id="focus_frame2" onclick="select_image2()">
+                                <button class="c_i_i_trioframe c_i_i_t_interactive" id="focus_frame2" onclick="select_image2(false)">
                                     <img class="c_i_img_preview" id="focus_img2" src="">
                                 </button>
-                                <button class="c_i_i_trioframe c_i_i_t_interactive" id="focus_frame3" onclick="select_image3()">
+                                <button class="c_i_i_trioframe c_i_i_t_interactive" id="focus_frame3" onclick="select_image3(false)">
                                     <img class="c_i_img_preview" id="focus_img3" src="">
                                 </button>
                             </div>
-                            <div class="c_f_i_media">external media:<div id="media_links"></div></div>
+                            <div class="c_f_i_media" id="media_links"></div>
                             <div id="focus_tags"></div>
                             <div class="c_f_i_time"><i>last edited <span id="timestamp">Example 0th, 2000</span></i></div>
                             <div class="c_f_i_desc" id="focus_desc">example text</div>
