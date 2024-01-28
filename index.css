@@ -151,8 +151,15 @@ body.light-mode{
 .side_context{
     margin-left: 10%;
     margin-right: 10%;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     display:block;
+}
+.side_links{
+    margin-left: 10%;
+    margin-right: 10%;
+    display:block;
+    color: black;
+    margin-bottom: 50px;
 }
 .tool_header{
     text-align: center;
@@ -244,18 +251,6 @@ body.light-mode{
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.c_h_right{
-    color: black;
-    position: absolute;
-    right: 10px;
-    top: 2px;
-}
-.c_h_right_light{
-    color: black;
-    position: absolute;
-    right: 10px;
-    top: 2px;
-}
 #svg_path_dark {
     fill: black;
 }
@@ -290,7 +285,7 @@ body.light-mode{
     width: 800px;
 }
 .c_focused_item_normal{
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     transition: height 150ms ease;
     overflow: hidden;
 }
@@ -303,13 +298,14 @@ body.light-mode{
 }
 .c_f_i_time{
     color: #adadad;
-    margin-top: 1px;
+    margin-top: 10px;
     margin-bottom: 10px;
     font-size: 10;
 }
 .c_f_i_desc{
     color: #E0E0E0;
     font-size: 13;
+    margin-bottom: 5px;
 }
 .light-mode .c_f_i_desc{
     color: black;
@@ -400,6 +396,8 @@ body.light-mode{
     
     font-family: 'Times New Roman', Times, serif;
     font-size: large;
+    border: 2px solid transparent;
+    transition: border-color 150ms linear;
 }
 .light-mode .c_item{
     color: black;

@@ -101,8 +101,9 @@ function pick_repo_file(){
                 content_to_write += "// " + '/'.repeat(file.download_url.length+1) + " //\n";
                 content_to_write += "// " + file.download_url + " //\n";
                 content_to_write += "// " + '/'.repeat(file.download_url.length-1) + " //\n";
-                open_file_text.innerText = file.download_url;
-
+                let test = file.html_url.split("/");
+                open_file_text.innerText = "Viewing " + test[test.length - 1];
+                open_file_text.href = file.html_url;
 
                 let request = new XMLHttpRequest();
                 request.onload = handle_file_contents;
@@ -110,6 +111,7 @@ function pick_repo_file(){
                     // add to the prelude header that this file failed to load
                     content_to_write += "// download request timed out\n"
                     open_file_text.innerText = "No file open";
+                    open_file_text.removeAttribute("href");
                     is_awaiting_response = false; 
                 };
                 request.open('get', file.download_url);
@@ -163,6 +165,7 @@ function write_loop(){
     // check whether we need to load a new repo
     if (content_to_write == ""){
         open_file_text.innerText = "No file open";
+        open_file_text.removeAttribute("href");
         get_random_code_file();
     }
 
