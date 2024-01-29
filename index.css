@@ -233,6 +233,9 @@ body.light-mode{
 .c_toggle:active{
     border-color: white;
 }
+.light-mode .c_toggle:active{
+    border-color: black;
+}
 
 
 .c_header{
@@ -327,16 +330,16 @@ body.light-mode{
 }
 .light-mode .c_i_i_trioframe{
     background-color: gray;
-    border-color: black;
+    border: 2px solid white;
 }
 .c_i_i_t_interactive{
     transition: border-color 150ms linear;
 }
 .c_i_i_t_interactive:hover{
-    border-color: #C0C0C0;
+    border-color: #a0a0a0;
 }
 .light-mode .c_i_i_t_interactive:hover{
-    border-color: rgb(255, 122, 60);
+    border-color: rgb(255, 122, 122);
 }
 .c_i_i_t_interactive:active{
     border-color: #e0e0e0;
@@ -363,7 +366,15 @@ body.light-mode{
 }
 .light-mode .c_i_i_focusframe{
     background-color: rgb(230, 230, 230);
+    border: 2px solid white;
 }
+.light-mode .c_i_i_focusframe:hover{
+    border-color: rgb(255, 122, 122);
+}
+.light-mode .c_i_i_focusframe:active{
+    border-color: rgb(245, 113, 52);
+}
+
 .c_i_i_f_img_preview{
     object-fit: contain;
     -webkit-user-drag: none;

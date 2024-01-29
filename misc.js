@@ -11,4 +11,6 @@ function toggle_theme(){
         document.body.className = ""
         theme_button.innerText = "Dark Mode"
     }
+    update_selected_thing() // update theme for selected trio frame thing
+    update_medias_theme() // update any media link's github icons
 }

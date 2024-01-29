@@ -107,7 +107,10 @@ function expand_target_item(item){
         let image = document.createElement('img');
         image.className = "c_i_i_f_media_img"
         if (media.type === "youtube")     image.src = "Resources\\Icons\\yt.png";
-        else if (media.type === "github") image.src = "Resources\\Icons\\gh.png";
+        else if (media.type === "github") 
+            if (is_light_theme)           image.src = "Resources\\Icons\\gh_dark.png";
+            else                          image.src = "Resources\\Icons\\gh.png";
+
         block.appendChild(image)
         block.appendChild(text)
 
@@ -124,6 +127,20 @@ function expand_target_item(item){
     item.style["border-bottom"] = "2px solid #ff5c00";
     currently_expanded_item = item; // this so when pressed again, can be hidden
 }
+function update_medias_theme(){ // used to change the image of github icons
+    let elem = document.getElementById("media_links");
+    for (let index = 0; index < elem.childNodes.length; index++){
+        let media = elem.childNodes[index].childNodes[0];
+
+        let image = media.getElementsByTagName('img')[0];
+        if (!image.src.endsWith("gh.png") && !image.src.endsWith("gh_dark.png"))
+            continue; // youtube medias don't need changing
+
+        if (is_light_theme) image.src = "Resources\\Icons\\gh_dark.png";
+        else                image.src = "Resources\\Icons\\gh.png";
+    }
+}
+
 function minimize_item(item){
     item.removeAttribute("style"); // this will clear the forced selected visual effect
     currently_expanded_item = undefined;
@@ -168,7 +185,14 @@ function select_image(image_id, frame, force_set){
         last_selected_frame.style = "";
     }
     last_selected_frame = new_frame;
-    last_selected_frame.style = "border: 1px solid white";
+    update_selected_thing();
+}
+function update_selected_thing(){
+    if (last_selected_frame == undefined) return;
+    if (is_light_theme)
+        last_selected_frame.style = "border-color: rgb(255, 81, 0)";
+    else 
+        last_selected_frame.style = "border-color: white";
 }
 
 function create_tag(name, colr1, colr2){ // maybe someday we'll beable to use the second color, but it seems its not very possible to use the second color 
