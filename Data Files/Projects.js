@@ -393,7 +393,7 @@ As per the primary goal of this project, there was quite a bit to learn about co
         name: "Codename Atriox",
         Date: "2023",
         Basc: "Slipspace Mod Tools",
-        Edit: "Jan 24th 2024",
+        Edit: "Jan 30th 2024",
         Link: [{desc:"showcase of asset loading capabilities", type:"youtube", url:"https://www.youtube.com/watch?v=IAZV11uO2vM"},
                {desc:"demo footage of import assets into the game", type:"youtube", url:"https://www.youtube.com/watch?v=cD979uZTxe8"},
                {desc:"project source files", type:"github", url:"https://github.com/orgs/Codename-Atriox/repositories"}],
@@ -403,37 +403,35 @@ As per the primary goal of this project, there was quite a bit to learn about co
         img3: "Resources/Examples/CA/CA_3.png",
         deps: ["visual_studio","cpp","directx","dear_imgui","csharp","wpf"],
         Desc: 
-`Codename Atriox (CA) was designed as a feature-rich, reimagination of the older developer/modding tools for working with the 'Blam!' & 'Slipspace' game engines.
-The goal of the project was to replace the older modding tools with community driven developer level tools, that would allow users to create content for the engine (particularly for the game Halo Infinite), as the developers can.
+`Codename Atriox (CA) was designed as a feature-rich, reimagination of the older developer/modding tools for the 'Blam!' & 'Slipspace' game engines.
 
-The reasoning behind this, is because the Slipspace game engine is closed-source & no developer tools are available. Meaning all tools have to be created & maintained by the community.
-And the secondary factor was that there were no other community powered tools that enabled users to create new content, opposed to making edits to the existing content.
+The goal of the project was to replace the older modding tools with community driven, developer level tools, which would allow users to create content for the engine (essentially just for the game Halo Infinite), as the official developers can.
 
-
-The first tool in the collection was our heavily Visual Studio inspired Tag file viewer (Tag files being the files that store the game-asset's data).
-
-The purpose of this tool is to view and edit the game-assets' container files (module files), which is the fundamental feature of being able to make/modify content for the game engine.
-Its the core tool for modding the game. However there are already numerous tools that serve the same role as this one, but they do not support recompiling Modules. Limiting the amount of content you can possibly create with those tools.
-
-It features an internal file browser for tag file navigation & searching, along with an intuitive, user-friendly text-based tag file property editor. 
-The goal with that was to at first glance, convince users that the binary content is stored in plaintext, which would make navigation much easier than an interface that presented the binary data in structures.
-By having the data formatted like this, it could support easily exporting this data into actual plaintext, which can then be used for a lot of different analysis related tasks. IE. comparing differences between two assets.
-
-For the features this tool lacks, they would be covered in various helper command-line tools, which would be stuff like model/texture importing/exporting, module file compiling/decompiling, and tools to dump various datas from the game engine.
-It was initially planned for all these helper tools to be bundled up into a singler helper tool (to simplify the processes), but as it stands all the tools remain individial.
+The need for this project arose from the fact that the Slipspace engine is a closed source project, and there are no publicly available developer tools. Meaning all content creation tools must be made entirely from scratch. And prior to this, there were no tools made.
 
 
-The other main tool in this project is the tag tester (& exporter).
-This tool provides the functionality to simulate how the data would be processed if accessed by the Slipspace game engine.
+The first tool in this collection is the heavily Visual Studio inspired content file viewer, intended for viewing and editing Slipspace content files. Which serves as the backbone of developing any content for the engine.
+It features an internal file/folder browser & finder, along with an intuitive, text-based content file editor, which is where you make modifications to any of the content files. 
+
+The goal with the editor was to convincingly represent the binary content as a plain text file, which makes the data much clearer, and makes it significantly easier to navigate. 
+It could also then support exporting into actual plaintext, which can then be used for a lot of different analytical tasks, like data comparison between content files and the likes.
+
+For the features this tool lacks, they would be covered in various helper command-line tools, which would be stuff like model/texture importing/exporting, and tools to dump various data from the game engine.
+It was initially planned for all these helper tools to be bundled up into a singular helper tool (to simplify the processes), but as it stands all the tools remain individual because of the projects decline.
+
+
+The other main tool in this project is the tag tester, which attempts to simulate how the data would be processed by the Slipspace game engine.
 For example, the tool will load, process & render textures and geometry from the exact propriety data formats that Slipspace uses.
-This allows for rapid error detection. Otherwise, you'd have to constantly reload the modified data into the release build of Halo Infinite to detect any issues.
-It also provides the ability to view/preview assets without having to access the data with the Slipspace engine, which can be rather inconvenient in most cases.
 
-It also provides the functionality to convert specific data types into non-propreity, standard formats, such as image assets.
-Which can be useful if users want to extract & modify those specific assets. Or it can also be useful for exporting the data to other programs to better inspect any errors/details. 
+This allows for relatively rapid manual error detection. Otherwise, you'd have to painstakingly reload the content files in engine (typically restarting the entire game) to detect any issues.
+It also provides the ability to examine already existing assets without having to access the data with the Slipspace engine, which can be rather inconvenient in most cases. 
+And in some cases (like textures) it allows you to export the data so you can examine/use it with other tools.
 
-For the most part, this was an interesting project to take on, as most of the research has to be conducted by myself.
-And from it, i gained a fair level of experience with a lot of different languages & frameworks, a few of which include: C++, directX11 & DearImGUI.`,},
+
+Eventually my interest in the project faded, and led to an early completion, where several features & functionalities would be excluded, and most tools would not be polished or compiled for the end user.
+But for the sheer magnitude of the project, it made it a very long way and hit many huge milestones that had never been reached before.
+
+For the most part, this was an interesting project to take on, as most of the research & reversal had to be conducted by myself, but it provided me with a fun opportunity to learn a lotta interesting things, like directX11, DearImGUI & a LOT of advanced data compression techniques, and really just a lot of super technical things about game engines and content and all that.`,},
 
 
 example2: {
