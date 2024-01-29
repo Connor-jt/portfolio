@@ -26,8 +26,20 @@ async function update_img_later(img, new_src){
 }
 function expand_item(){
     // if we're doing this in squisheed or mobile mode, then we have to record the change in scroll position
-    
+    let elem = undefined;
+    if (mobile_mode === true) elem = document.getElementById("d_scroll");
+    else                      elem = document.getElementById("c_scroll");
+
+    let prev_height = elem.scrollHeight;
+    let prev_scroll = elem.scrollTop;
     expand_target_item(this);
+
+    if (mobile_mode === true || tablet_mode === true){
+        let curr_height = elem.scrollHeight;
+        let curr_scroll = elem.scrollTop;
+        let height_difference = curr_height - prev_height;
+        elem.scrollTop = prev_scroll + height_difference;
+    }
 }
 function expand_target_item(item){
     let focus_panel = document.getElementById("focus_presenter");
@@ -127,11 +139,15 @@ function select_image3(force_set){
 }
 function select_fullscreen(){
     let focus_imgF = document.getElementById("focus_imgF");
-    document.getElementById("fullscreen_img_border").style.visibility = "visible";
+    let fullscreen_panel = document.getElementById("fullscreen_img_border");
+    fullscreen_panel.style.visibility = "visible";
+    fullscreen_panel.className = "fullscreen";
     document.getElementById("fullscreen_img").src = focus_imgF.src;
 }
 function escape_fullscreen(){ // either by clicking or esc?
-    document.getElementById("fullscreen_img_border").style.visibility = "collapse";
+    let fullscreen_panel = document.getElementById("fullscreen_img_border");
+    fullscreen_panel.style.visibility = "collapse";
+    fullscreen_panel.className = "fullscreen fullscreen_shrink";
     document.getElementById("fullscreen_img").src = "";
 }
 

@@ -18,6 +18,10 @@ body.light-mode{
     bottom: 0px;
     padding: 60px;
     background-color: #00000080;
+    transition: padding 60ms ease-out;
+}
+.fullscreen_shrink{
+    padding: 180px;
 }
 ::-webkit-scrollbar {
     width: 10px;

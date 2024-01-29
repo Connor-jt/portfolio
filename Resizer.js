@@ -28,6 +28,9 @@ function resizer_init(){ // call on window load
 var last_width = -1;
 var last_available_width = -1;
 var last_ratio = -1;
+
+var tablet_mode = false;
+var mobile_mode = false;
 /*
 const collapse_width = 800;
 const focus_tile_width = 800;
@@ -66,12 +69,14 @@ function resize(){ // run once on init, and then whenever
         content_scroll.className = "";
         c_sidebar.className = "collapsed_sidebar";
         c_code.className = "background_sample";
+        mobile_mode = true;
     } else{ // then expand header
         available_width -= 300; // size of the sidebar 
         doc_scroll.className = "";
         content_scroll.className = "content_scroll page_scroll";
         c_sidebar.className = "sidebar";
         c_code.className = "background_sample background_expand";
+        mobile_mode = false;
     } 
 
     // determine whether tiles should be placed on the side
@@ -80,12 +85,14 @@ function resize(){ // run once on init, and then whenever
         focus_tile.classList.remove("c_focused_item_exand");
         focus_tile.classList.add("c_focused_item_collapsed");
         all_tiles.className = "";
+        tablet_mode = true;
     } else {
         // stick tiles to the right side
         available_width -= focus_tile_width;
         focus_tile.classList.remove("c_focused_item_collapsed");
         focus_tile.classList.add("c_focused_item_exand");
         all_tiles.className = "tiles_sidebar";
+        tablet_mode = false;
         // if enough room on the sidebar, put the code behind them mini tiles
         if (available_width >= code_min_expand_width){
             c_code.className = "background_sample background_further_expand"; 
