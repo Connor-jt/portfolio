@@ -484,7 +484,7 @@ And as per the goal of this project, it greatly helped with developing my JavaSc
         name: "UE5 Voxels",
         Date: "2022",
         Basc: "Proc Gen Project",
-        Edit: "Jan 24th 2024",
+        Edit: "Jan 30th 2024",
         Link: [{desc:"in-engine gameplay", type:"youtube", url:"https://www.youtube.com/watch?v=iddGwBH25kE"},
                {desc:"animation of the voxels algorithm", type:"youtube", url:"https://www.youtube.com/watch?v=aL0p8CMEh3g"},],
         imgp: "Resources/Examples/MC/MC_3.png",
@@ -493,29 +493,29 @@ And as per the goal of this project, it greatly helped with developing my JavaSc
         img3: "Resources/Examples/MC/MC_2.png",
         deps: ["unreal_engine","blueprints"],
         Desc: 
-`A revisitation to an older project of mine, where I had previously (partially) implemented procedurally generated terrain systems with the marching cubes algorithm in Unreal Engine 4.
-The aim of this project was to fully implement the marching cubes algorithm into unreal engine 5, with full contour smoothing implemented.
+`This was a remake of an older project where I had partially implemented procedurally generated terrain systems with the marching cubes algorithm in Unreal Engine 4.
+The aim was to get a fully functional implementation this time, but with unreal engine 5 and with proper contour smoothing as well.
+Although, unreal engine 5 isn't that much different from 4 workflow wise, so recreating what I already had wouldn't be too difficult of a task (and I probably could have just copy pasted), it would be improving it that would be potentially challenging.
 
-Something that I've always enjoyed is making content that makes itself. Procedural generation or AI or any of that stuff.
-On several occasions I had implemented different techniques of procedural terrain generation in various game engines, most notable was my previous marching cubes implementation.
 
-So given that the project was originally incomplete, I had decided to revisit & finally finish it. In the process I also upgraded to a newer game engine.
-
-The marching cubes algorithm itself is a simple set of rules that dictate what type of shape should be generated, given 8 vertices of a cube.
+The terrain generation algorithm (marching cubes) is a simple set of rules that dictate the type of shape to generate when given of each of 8 vertices on a cube.
 Each vertex holds a single bit of data: whether it is inside or outside of the shape.
-By knowing which of the 8 vertices are inside the shape, we can calculate the mesh segment inside that cube, meaning a total of 256 possible shapes. With this algorithm, we can simply calculate the mesh from within as many adjacent cubes as we need, hence 'marching'.
+By knowing which of the 8 vertices are inside the shape, we can calculate the mesh/shape inside that cube, meaning a total of 256 possible shapes (most are just rotated versions of the possible unique shapes). 
 
-If a more advanced algorithm is needed for smoother shapes, each vertex can represent a floating point number, which defines how solid that vertex is.
-By defining how solid each vertex is, we can calculate the exact contour position between each pair of vertices, allowing us to generate smoother meshes (or rather, a much larger array of possible meshes).
+The amazing thing about the marching cubes algorithm is it allows you to calculate the shape inside any cube, completely independent to any other cube. Which allows things like parallel processing, which can drastically improve performance & increase compute speeds when generating the shapes within many cubes.
 
-Combine that algorithm with a 3d procedural noise algorithm and you have an interesting procedural terrain system.
+But doing just that gives pretty undesirable results, so instead of that I used a slightly more advanced version where each vertex would instead represent a floating-point number, which defines how solid that vertex is.
+By defining how solid each vertex is, we can calculate the contour position between each pair of vertices, basically the middle point between a solid and non solid vertex. Whereas storing each vertex as a single bit (either solid or not solid) only allows us to specify the 50% mark between a solid and non solid vertex.
 
-In revisiting this project, I learnt of a flaw in the original marching cubes algorithm which I had previously faced. Which was the problem of ambiguous faces between adjacent cubes.
-Which simply put, is an issue where two adjacent cubes might share similar shapes but both shapes assume the other has a triangle covering the hole in between. (So neither shape covers the hole).
-This time around I designed a solution, resulting in a much better implementation.
+When you combine that with a 3d noise generation system, you can very easily generate these infinite voxel-ly cave kind of worlds, or you could use 2D noise to generate a surface to your 3d world.
+On top of that, this system could also support regenerating the same chunks of data, with any sort of modifications, which allows effectively editing & recalculating the generated terrain at runtime, post initial generation.
 
-Overall, the project turned out rather well. But due to it being built with the Unreal Blueprints language, it did not perform as well as expected.
-Which ultimately marked the end of this project, lest it be reimplemented again in a more performant language.`,},
+
+Midst remaking, I learnt of a flaw in the algorithm which I had originally unknowingly ran into. Which was the problem of ambiguous faces between adjacent cubes. Where two adjacent cubes might share similar shapes, but both shapes are designed so that the other cube would fill in the hole in this cube's mesh/shape, meaning that neither shape covers the hole, and thus a hole would exist in the generated mesh where it should not have been.
+This time around since I had realized the issue, I was able to solve it and that allowed my generated meshes to turn out great.
+
+
+Overall, the project turned out rather well, it surpassed the aim of the project, but due to it being built with the Unreal Blueprints language, it did not perform very well at all. Which ultimately marked the end of this project, because rewriting it once again with a faster language really would not have been worth it.`,},
 
 // removed as we're going to merge this in with the megalo mods section
 //     example5: {
