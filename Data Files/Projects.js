@@ -567,7 +567,7 @@ Overall, the project turned out rather well, it surpassed the aim of the project
         name: "Megaloscripting",
         Date: "2022",
         Basc: "H:MCC Megalo Mods",
-        Edit: "Jan 24th 2024",
+        Edit: "Feb 1st 2024",
         Link: [{desc:"channel dedicated to my creations", type:"youtube", url:"https://www.youtube.com/@gamergotten/videos"},
                {desc:"complete collection of source files", type:"github", url:"https://github.com/Gamergotten/RVT-Gametypes"}],
         imgp: "Resources/Examples/MS/MS_1.png",
@@ -576,52 +576,47 @@ Overall, the project turned out rather well, it surpassed the aim of the project
         img3: "Resources/Examples/MS/MS_3.png",
         deps: ["vs_code","megalo"],
         Desc: 
-`After gaining expertise in the Megaloscript languages, i started working on more ambitious Megaloscript projects.
-The goal of these projects were to bring entirely new & unique experiences to all players of Halo MCC.
-Which mostly entailed bringing various forms of AI/NPCs to the Custom Games Browser.
-
-The first and most popular of these projects was my attempt at a players vs zombies experience.
-Originally it was only designed as a test to see how convincing the AI could be. 
-But was turned into a full-scale project upon the realization that these AI could animate and behave almost exactly as users would expect them to.
-
-Following the development of this mode, a lot of interest was shown by the Halo community, as having AI in multiplayer was not currently a feature in the game.
-With growing interest came growing demands for this project, which eventually lead this experience to be more than a simple mod.
-The finished project ended up with countless features (objectives, AI customization, currency systems, etc), and complete customizability for users of the mod.
-The users could completely customize how the experience played, what the objectives were, how easy it was and so on, even customizing the player death mechanic in various ways.
+`Megaloscript is a programming language native to several of the video games from the Halo franchise, designed as a means for modular creation of & easily reworking in game experiences.
+This language was a huge interest of mine at the time, and having substantial experience, I was able to create some very unique & interesting things.
+My main goal whenever I was working on one of these projects was to bring something entirely new & unique to the game.
 
 
-Another highly popular mod was the Scarab project (although not as popular), which was aimed to be a massive reimagination of the popular 'Invasion' experience. 
-'Invasion' being an asymmetric player vs player game mode, where 2 teams of players would take turns at attacking and defending numerous objectives, featuring probably the most immersive Halo multiplayer experience. 
+One of the most notable examples was my attempt at a players vs zombies experience, which was originally only designed to test how interesting the AI (zombies) could be. But with how well the results turned out, I just had to turn this into a fully featured experience.
+And as it would turn out the general Halo community also loved the idea, as it would bring a lot of awesome things had never really been in a halo game before. 
 
-The key idea behind the scarab project was the focus of the large AI controlled scarab vehicle (an iconic Halo quadruped vehicle).
-Like Invasion there would be two teams, one who has to defend and the other attacking.
-However, as a part of this reimagination process, it was decided that both teams should have the opportunity to defend and attack, simultaneously.
-One team would be defending the scarab AI, while it would be attacking the base of the opposing team.
-The other team would be defending their base, as well as attacking the scarab AI.
-
-In a way this allowed the game mode to maintain its asymmetric objective, but have an opportunity for either team to win, without having to run another round to swap roles. Which was perfect for this mode as the average round time was around 30 minutes.
-
-Aside from the gameplay, what really blew players away was the fact that the AI scarab was even possible.
-For nearly 8 years, there had not been a single experience like it. Nor one anywhere as advanced.
-And of course if not for my artistic genius of a friend, Mr Dr Milk, the experience would not have been as nearly as fantastic.
+With the huge community interest, the project turned out really well and with loads of extra requested features (objectives, AI customization, currency systems, etc).
+With so many requests & features, users could completely customize how the experience played, what the objectives were, how easy it was and so on, even customizing the player death mechanic in various ways, and coupled with the game's forge feature, it really allowed users to create their own unique experience using this mod.
+I ended up adding so many features that most of them would rarely find use. Although for me, it was more about enabling creativity, where users could find & play with these features to really get a feel for how they wanted their personalized experience to play. And even if most people never used certain features, there might have actually been one person who absolutely loved it, and that's what it was really about when it comes to putting the power of creativity into the hands of others.
 
 
-Throughout my time spent working with Megaloscript, the limitations were pushed to incredible lengths to allow these things to even exist.
-Partly due to flaws in the Language, and partly due to my effort to push the language as far as i possibly could.
+Another great mod was the Scarab project, which was aimed to be a massive reimagination of Halo's popular 'Invasion' experience. 
+'Invasion' being an asymmetric player vs player game mode, where 1 team attacks objectives and the another defends them, with the roles alternating between 2 rounds, featuring probably the most immersive & loved Halo multiplayer experience. 
 
-One of my favourite flaws in the language was a way to compute floating point maths, in this language that lacked floating point number support.
-The exploit was relying on variables outside of the language to do the maths for me, which ended up being the shield & health values of playable characters.
-The Megaloscript language had no float variables, but it did allow modifying the shield & health values of characters. Which as it turned out were stored in-engine as floating-point numbers.
+The key idea behind the scarab project was the focus of this large AI controlled scarab vehicle (a large vehicle iconic to Halo).
+Like Invasion there would be two teams, one defending and the other attacking.
+However, as a part of this reimagination process, it was decided that both teams should have the opportunity to simultaneously defend and attack, which would really branch out the ways that you could play this experience.
+One team would be defending the AI scarab, while they would also be attacking the massive base of the opposing team.
+The other team would be defending their base, as well as trying to destroy the scarab.
 
-The maths becomes slightly complicated, as the original developers had made errors within the code interpreter, where regardless of the operator it would divide the operand by 100.
-So, to half a floating point number, you would have to divide it by 200 (because 'X / 200' would then become 'X / 2').
-There were numerous limitations with this technique, but it did at least allow floating point calculations, which was just enough to implement the Arc Cosine function into Megaloscript.
-And by having the Arc cosine function, we could utilize inverse kinematics for the scarab vehicle's legs, which may be one of the most impressive feats in halo modding to date.
+In a way this allowed the game mode to maintain its asymmetric objective, with the goal of defending the scarab, and the other team attacking it.
+And the added functionality of destroying the attacking team's base, acts almost as an organic round time limit, where inevitably the attackers base will be destroyed. 
+But to reach that effective time limit, the defenders of course must defend, but at the same time it acts as an opportunity for either team to play the role of the attacker, without having to run another round to swap attacking/defending roles. Which was perfect for this mode as playtime for rounds averaged around 30 minutes.
+
+For the most part, all of that was actually an afterthought, as this project was designed as a sort of tech demo to show off recent huge breakthroughs in Megaloscripting technologies that allowed the scarab to even exist. 
+But again, the community loved it, so I couldn't pass up the opportunity to turn this thing into a full scale in game experience.
+For this project I was joined by one of the most talented map forgers, Mr Dr Milk, to really bring this project together. We would work in tandem tailoring map to mode and mode to map, resulting in a really great fit between the two. Really bringing the best of both worlds.
+
+When the release came, we didn't even really have to organize anything, we just sent out the notification to a group of friends, and within minutes we had more than enough people jump online to host a full session. Players were so amazed they opted to share their experiences online and by the next day, 10's of thousands of people had seen and been amazed by this project, which was an insane feat for a mod designed for a 12-year-old, low population game.  
+Within the next week or so, with the help of several big names in the community sharing our work, we'd spread into the 100's of thousands of people amazed.
+It would mark probably one of the craziest things to have ever to be seen for a halo game. And it really went to show how far others and I had managed to push this effectively ancient technology.
 
 
-Collectively these projects reached millions of viewers, and somewhere in the realm of hundreds of thousands of players.
-It proved a great opportunity to hear from so many players, what they did like, and what they did not.
-Which allowed me to continually improve the experiences so that everyone could get what they wanted out of them.`,},
+To conclude my time with Megaloscript, I decided to concentrate all of my knowledge into a massive piece of technical documentation, covering somewhere in the range of 60 pages worth of history, fundamental/beginner concepts, scripting syntaxes, best practices, optimizations, advanced & 'dark magic' scripts and even experimental code compiling compression techniques.
+Released in a hope that it would keep the flame of Megaloscripting alight, and to enable future generations to continue the path that I paved. 
+
+
+All in all, Megaloscript really helped me develop my passion for programming & development, and it was an amazing experience to be able to share that passion with the million or so people who at some point had either watched video showcases, joined me/others in game, or those who had helped & cheered along the way.
+It was a great opportunity to really understand what it is to be a player, the needs, the wants, the playstyles, the goods, the bads. I received probably 1000's of pieces of feedback across the span of my 100's of projects, some projects were good, some bad, and it became quite easy to tell the two apart, ultimately allowing me to spend more time on the things that people would come to love. `,},
 
 
     // //////////////// //
