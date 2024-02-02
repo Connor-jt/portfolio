@@ -626,7 +626,7 @@ It was a great opportunity to really understand what it is to be a player, the n
         name: "Megalograph",
         Date: "2021",
         Basc: "Megaloscript Compiler",
-        Edit: "Jan 24th 2024",
+        Edit: "Feb 2nd 2024",
         Link: [{desc:"walkthrough of one of the major versions", type:"youtube", url:"https://www.youtube.com/watch?v=2KovZYexA7w"},
                {desc:"project source files", type:"github", url:"https://github.com/Gamergotten/Megalograph"}],
         imgp: "Resources/Examples/MG/MG_2.png",
@@ -635,33 +635,37 @@ It was a great opportunity to really understand what it is to be a player, the n
         img3: "Resources/Examples/MG/MG_1.png",
         deps: ["visual_studio","csharp","wpf", "hxd","megalo"],
         Desc: 
-`Megalograph is a fully graphical code compiler & decompiler targeted towards the propriety (Halo) Megaloscript language. Supporting 3 unique variants of the target language.
-To allow this, Megalograph hosts its own unique node-based programming language, which can be called "Megalograph". Which can be decompiled/compiled to any of those 3 Megaloscript variants.
+`Megalograph is a graphical code compiler & decompiler, targeted towards the propriety Megaloscript language used in some Halo games.
+Megalograph features a visual node-based programming language which can be decompiled/compiled to any of the 3 major language variants. (one for each of the games: Halo Reach, Halo 4 & Halo 2A).
 
-The need for this project arose from the fact that there were no tools that filled its place. (at least until long after its release)
-It filled the place of a compiler for the H2A variant of the Megaloscript language, a language which was previously unknown.
+The need for this project arose from the fact that there were no tools at the time, capable of targeting all 3 major Megaloscript variants.
+This primarily filled in for the lack of a compiler for the H2A variant of the Megaloscript language, which was previously unknown & not possible to write code for.
 
-The project began with researching the H2A Megaloscript variant, when the differences between that version and the other more documented variants were understood, the actual tool could begin development.
-For the tool itself, it was decided that a graphical node-based language would be used to represent the unknown propriety Megaloscript language.
-Which essentially meant designing the Megaloscript language myself, although since Megaloscript is an interpreted language, the core functionality didn't need designing. So, it was merely a task of designing the language's syntax.
 
-The idea for a node-based language was inspired by Unreal Engine's Blueprint system, which provides a unique and intuitive programming experience.
-It also allowed breaking the language down into something much simpler than can be achieved by text-based code, which would help users understand the Megaloscript language much better.
+The project began with researching the H2A Megaloscript variant, to build an understanding of the bytecode.
+Once I had understood how the bytecode worked, I had to come up with a way to make the bytecode human readable. Essentially a way to display the code.
+Which meant I had to design my own language that could convert to & from this bytecode, although it was pretty straightforward since Megaloscript is a rather simple language, with no classes and stuff like that.
 
-By using a node-based language, it means that the code is impossible to have syntax errors. Which means that its generally easier to work with.
-However, the code is slightly harder to work with in a 2-dimensional state. Partly because it requires greater organization skills, and partly because it creates an excess of unneeded bloat, which just gets in the way of making code.
+For the language, I really loved the idea of basing it off of Unreal Engine's Blueprints system, which is a language where all the code is made up of these interactable 2d boxes that you can drag around and connect together with draggable lines and all that.
+Blueprints is a super user friendly language, its pretty much drag and drop to get it all working, which is fantastic for people who aren't very familiar with the classical text based languages.
+And because its mostly drag and drop, there's little room for syntax errors, which can help clear the frustration for relatively new users having problems with the syntaxing.
 
-And for those reasons, is why this was a hobby project, and not really intended for public use.
+By having this blueprints inspired drag and drop node system, it really helped with displaying all these extra bits of context too, like showing you what variables you can use from what types of objects and really just helping show you what you can actually access at any given value slot, where's a classical text based language can only properly support this with very strong auto-completion kind of system.
+The only real downside to this idea was the problem of having to organizing any code you created, or else the code blocks would be very hard to read, and organizing the code can become quite a pain if you didn't quite know what the code was going to look like before you created it.
 
-Once the language was designed and implemented, then support was added for the 2 other Megaloscript variants.
-Along with a plethora of helpful features, such as: block comments, node searching, variable names & so on.
+To power the research and development, I had designed a modular, intermediate language for parsing the bitpacked data that makes up the Megaloscript files.
+Using the xml file format to provide a quick & easy format, the language would effectively allow me to sort bits & bytes into structured data that Megalograph could read & write, and due to its modularity I could easily apply any adjustments or changes, as well as I could easily share structures between multiple different Megaloscript struct databases.
 
-The only other tool that matches compatibility with all major Megaloscript variants is the propriety Megaloscript compiler, developed by 343 industries as the official tool to compile Megaloscript.
-That tool was recently released in 2022, more than a year after the release of Megalograph.
 
-However, Megalograph provides the functionality to decompile Megaloscripts, meaning that it has native compatibility with every other tool that compiles Megaloscript. Unlike the official compiler, which lacks support for reading Megalosrcipt compiled from other tools.
+After setting up Megalograph's language, I added support for the two other language variants & a bunch of other helpful features like block comments, node searching, variable names & really just a lot of random helpful little things.
+By the time I finished working on this project, I had reached my goal of creating a whole entire Megaloscripting tool, the language, the compiler, decompiler, node system, etc.
+The only other tool as capable as this was the official Megaloscript compiler, which was closed-source and inaccessible for public use (but about a year later, it was released for public use).
+However, Megalograph offers the ability to decompile previously compiled code, so in a way it was designed to work with other tools that compile Megaloscript, meaning its always possible to migrate projects to Megalograph.
 
-All-together this project was great opportunity to explore the C# WPF UI framework, and develop my programming & UI development skills.`,},
+
+It was definitely a fun experience learning how to put together my own language & compiler, the many months of work to get it to a functional state and then having this complex system work exactly as intended was probably one of the most satisfying things ever.
+Probably the most important thing I learnt from this project was that you really can do anything when you put in the effort. Prior to this project I had no clue how to do any of this, but with sufficient determination I managed to make it all happen. 
+And that would really change the way I approached complex projects, by giving them a generous helping of optimism basically, and so far that approach has had amazing results.`,},
 
 
     example8: {
