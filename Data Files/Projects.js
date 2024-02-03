@@ -384,8 +384,6 @@ Although from the results, it felt almost entirely unnecessary to use Rust (comp
 As per the primary goal of this project, there was quite a bit to learn about compiled assembly code & executable files, and I can say that I feel fairly confident in my understanding of it now, and will maybe be able to apply that knowledge to some deeper projects in the future.`},
 
 
-
-
     // //////////////// //
     // 2023 HIGHLIGHTS //
     // ////////////// //
@@ -434,19 +432,19 @@ But for the sheer magnitude of the project, it made it a very long way and hit m
 For the most part, this was an interesting project to take on, as most of the research & reversal had to be conducted by myself, but it provided me with a fun opportunity to learn a lotta interesting things, like directX11, DearImGUI & a LOT of advanced data compression techniques, and really just a lot of super technical things about game engines and content and all that.`,},
 
 
-example2: {
-    name: "Javasqiggle",
-    Date: "2023",
-    Basc: "Multiplayer Web Game",
-    Edit: "Jan 30th 2024",
-    Link: [{desc:"general showcase footage", type:"youtube", url:"https://www.youtube.com/watch?v=ETITCZBJEp8"},
-           {desc:"project source files", type:"github", url:"https://github.com/Connor-jt/JavaSqiggle"}],
-    imgp: "Resources/Examples/JS/JS_1.png",
-    img1: "Resources/Examples/JS/JS_1.png",
-    img2: "Resources/Examples/JS/JS_2.png",
-    img3: "Resources/Examples/JS/JS_3.png",
-    deps: ["vs_code","javascript","htmlcss","opengl","peerjs","blender"],
-    Desc: 
+    example2: {
+        name: "Javasqiggle",
+        Date: "2023",
+        Basc: "Multiplayer Web Game",
+        Edit: "Jan 30th 2024",
+        Link: [{desc:"general showcase footage", type:"youtube", url:"https://www.youtube.com/watch?v=ETITCZBJEp8"},
+            {desc:"project source files", type:"github", url:"https://github.com/Connor-jt/JavaSqiggle"}],
+        imgp: "Resources/Examples/JS/JS_1.png",
+        img1: "Resources/Examples/JS/JS_1.png",
+        img2: "Resources/Examples/JS/JS_2.png",
+        img3: "Resources/Examples/JS/JS_3.png",
+        deps: ["vs_code","javascript","htmlcss","opengl","peerjs","blender"],
+        Desc: 
 `Javasqiggle is an online multiplayer, interactable strategy game designed to run on the web. 
 
 The purpose being, to familiarize myself with JavaScript and web development, while allowing myself to express various talents, like game design, graphics, UI and all that.
@@ -516,51 +514,6 @@ This time around since I had realized the issue, I was able to solve it and that
 
 
 Overall, the project turned out rather well, it surpassed the aim of the project, but due to it being built with the Unreal Blueprints language, it did not perform very well at all. Which ultimately marked the end of this project, because rewriting it once again with a faster language really would not have been worth it.`,},
-
-// removed as we're going to merge this in with the megalo mods section
-//     example5: {
-//         name: "Megaloscript RE",
-//         Date: "2022",
-//         Basc: "Reversal & Documentation",
-//         imgp: "Resources/Examples/ME/ME_1.png",
-//         img1: "Resources/Examples/ME/ME_1.png",
-//         img2: "Resources/Examples/ME/ME_2.png",
-//         img3: "Resources/Examples/ME/ME_3.png",
-//         deps: ["ghidra","x64dbg"],
-//         Desc: 
-// `To conclude my time spent learning Megaloscript (a language native to various Halo games), I reverse engineered unknown machine code & then released documentation for the majority of the language.
-// Featuring a full 60-page document, Covering almost every notable aspect of Megaloscript.
-
-// The reverse engineering was mostly targeted at converting the machine code into human readable code.
-// Which first started off with simple things like understanding how the compiled code was processed in game.
-// Next up was investigating opcodes that did either nothing or didn't work as expected, and as it would turn out some of them were intentionally disabled by the developers.
-// In fact, I discovered a fair few mistakes that I was able to contact the developers about and let them know exactly what the problem was.
-// Allowing them to rapidly fix the issues.
-
-// There were a lot of interesting things that were discovered about the language, upon unscrambling the machine code that interprets it.
-// For example, a unique code compression technique was discovered, which utilizes null actions & conditions to adjust relative offsets of the following conditions & actions. 
-// Meaning the functions can share the same bytes of code, but with different arrangements.
-// However, that technique is only theoretical and untested in practice, so may be flawed.
-
-// Finally came the documentation. 
-// While there was already good documentation out there for a Megaloscript variant, that only covered content for somewhat experienced users.
-// The intention with my documentation was to provide a source of knowledge that could benefit users of any level, all the way from just beginning to the most advanced.
-
-// Within the documentation is a brief history of the language - what I managed to learn about it,
-// Variables and how they work (variable limits, semi object oriented variable storage system),
-// The syntactic/compiled code structures, how plaintext code is compiled, best practice code optimizations.
-// Most importantly it covers all code techniques that drastically expand the language's capabilities.
-
-// This ranges from things as simple as techniques to create smooth object movement, to bypassing synchronized states between multiplayer clients.
-// For context, a large quantity of things are synchronized between every user in a Halo multiplayer session (like visible objects, variables, etc).
-// By breaking synchronization, you can achieve so many things that were never possible. Which can be achieved by finding a player state that does not synchronize between clients and using that to identify the local player.
-// As if that state does not synchronize, then the state can only exist for the local client's player, allowing us to determine which in game player is the local one.
-// We can then use simple logic gates and synchronized states to feed data from the server to selected clients (through synchronized player states), where previously it was only ever possible to feed data to all clients simultaneously.
-
-// Thats the kind of techniques featured in the documentation, fully detailed with ready to go sample code provided.
-// And of course, things that were discovered with reversal were also featured, bugs, discoveries, and all that.
-
-// This project was a good learning experience for machine code reversal, and then the documentation of findings.`,},
 
 
     example6: {
@@ -672,7 +625,7 @@ And that would really change the way I approached complex projects, by giving th
         name: "IRTV",
         Date: "2021",
         Basc: "H:Infinite Mod Tool",
-        Edit: "Jan 24th 2024",
+        Edit: "Feb 3rd 2024",
         Link: [{desc:"playlist of creations using this tool", type:"youtube", url:"https://www.youtube.com/watch?v=-WL5zU1mXcE&list=PLHq7Y0BiaVnbRmMFdWTRVQJzXwLZHYMUF"},
                {desc:"project source files", type:"github", url:"https://github.com/Gamergotten/Infinite-runtime-tagviewer"}],
         imgp: "Resources/Examples/IRTV/IRTV_1.png",
@@ -681,24 +634,34 @@ And that would really change the way I approached complex projects, by giving th
         img3: "Resources/Examples/IRTV/IRTV_3.png",
         deps: ["visual_studio","csharp","wpf","cheat_engine"],
         Desc: 
-`Halo Infinite Runtime Tag-Viewer (IRTV) is an intuitive, user-friendly tool for creating & applying simple game modifications to Halo Infinite.
+`Infinite Runtime Tag-Viewer (IRTV) is an intuitive, user-friendly tool for creating & applying simple game modifications to Halo Infinite.
 
-Initially this tool was designed as a research framework, to understand the underlying game engine behind the game Halo Infinite.
-As demand grew for a functional modding tool for Halo Infinite, this tool received a lot of attention, and was soon modified to meet demands.
+Initially this tool was designed as a research framework to be used to understand the underlying game engine behind the game.
+The core design was to read data from a running game process and format it into human readable structures.
+It would do this by hooking into the game process, finding specific data locations and then processing the various types of data into the structures.
+Mainly it would process the tag instances list, which is where Halo Infinite would store references/pointers to all of the game's assets (known as tags).
+That list would then be displayed within IRTV, to allow users to navigate through all of the game's currently loaded assets.
+And most importantly, it allowed users to open any of those assets and have the raw data be broken down & structured into readable text fields, and in a later version it would support editing them & the changes would be converted back to the raw data and injected back into the game. 
 
-The attention grew not only from users interested in making modifications to the game, but also other modders who desired to be a part of the future of game modding for Halo Infinite.
-within a few weeks the development team rose from just me, to about 13 people, and countless other people who helped from a less technical standpoint.
 
-Following, millions of lines of code would be committed the project, and somewhere around thousands of users would download & use the tool.
+When people found out about this tool, it pretty much just exploded in popularity, which probably attributed to the fact that there were no alternatives to this out there.
+If you wanted to mod halo, rip content or just get a glimpse of how the game worked, you'd have to use this tool.
+And with a lot of users jumping onboard, the project managed to pull a lot of interest from hobbyist developers too. Within a few weeks there were around 13 people actively working on the project. (With many more making less direct contributions).
+We grew to a userbase in the thousands, and it would only continue growing. Which was pretty crazy for just a small thing i made to play around with.
 
-Due to popularity, we even partnered with one of the largest Online Halo communities (HaloCustoms.com), to provide a convenient place for users to download & share their mods generated with this tool.
+One of the coolest things we did for the tool was partnering with one of the largest Online Halo communities, HaloCustoms.com, to provide a convenient place for users to download & share mods generated with this tool.
+This would pave the way for people actually being able to release their mods as things that other people could just go and download and apply to their game.
+And due to that, users didn't have to know anything at all about the tool, they could just go to the website, download some mods, load them with the tool and have it work pretty much right out of the box.
 
-Because of how early into Halo Infinite's lifespan this tool was developed, we spearheaded virtually all research into the game engine, the only previous knowledge out there was reverse engineered knowledge for a much older version of the game engine.
-Ultimately because of this, we paved the pathway for modding Halo Infinite, for future modding endeavours.
-And as of writing there is still no tool which supersedes or replaces the functionality of this tool.
 
-This was one of my biggest projects, both in scope and demand. It provided an excellent opportunity to become familiar with the C# software development framework & working in a team-based environment.
-It also provided a great opportunity to learn about meeting and managing the demands of a moderate-to-large userbase.`,},
+In order to even make this tool possible we had to spearhead virtually all research into the game engine, the only relevant knowledge out there at the time was some reverse engineered file formats for older versions of the game engine.
+Because of this, we went in pretty much blind. But with adequate effort we managed to push through and acquire the knowledge we needed to make it all happen.
+A lot of the research put into this tool would greatly contribute to future projects like: Halo-Infinite-Tag-Editor, Infinite-Runtime-Model-Editor & Codename-Atriox. Pretty much being the foundation of any form of modding for the game.
+
+
+This was probably one of my biggest projects in both scope and demand. It was also one of my first big projects using C# and the WPF framework, but none-the-less it turned out great.
+All-round, this project provided a lot of great learning opportunities, stuff like familiarizing myself with C# software development, working in a team based environment, UI design, and it really gave me a good grasp of what it's like meeting user demands.
+It was a such a huge opportunity for me and I loved almost every moment of it, it brought a lot of amazing people together and many friends were made along the way.`,},
 
 
     example9: {
