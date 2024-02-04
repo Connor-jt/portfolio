@@ -676,20 +676,34 @@ It was a such a huge opportunity for me and I loved almost every moment of it, i
         img3: "Resources/Examples/HPS/HPS_3.png",
         deps: ["visual_studio","csharp","winforms","cheat_engine"],
         Desc: 
-`HaloPogSwitch (HPS) is a real-time armour/cosmetics switching tool, supporting 3 separate halo games: Halo Reach, Halo 4 & Halo 2 Anniversary.
+`HaloPogSwitch (HPS) is a runtime cosmetic switching tool for Halo Reach, Halo 4 & Halo 2 Anniversary.
+It allows players to change their armour, effects & other things without having to back out of the game to get to the main menu. This tool also unlocks many locked and hidden cosmetic options.
 
-Originally starting off as research for various hidden cosmetics & Halo's cosmetic synchronization system, it soon became a fully featured tool for users to change their characters mid-match. Including the possibility to use previously unused/locked cosmetics.
 
-After the concept was proven with the research, a few other members of the Halo community joined along to assist with the tool's development.
-Because this was our first-time developing software, we had opted to use a more basic framework for the tool. Which was the WinForms framework.
-The WinForms framework provided a relatively simple set of tools which allowed easily building user interfaces.
-However due to the simplicity of the framework, it led to numerous issues with development, which were eventually resolved. 
+It basically started off as me messing around with cheat engine and just researching various hidden cosmetics & cosmetic synchronization between clients. 
+And when showing this off to a friend, they proposed to help turn it into a standalone tool that would make the process much easier and much more accessible to regular people.
 
-For the actual functionality of the tool (providing real-time cosmetics switching) we had decided on using the Memory.dll NuGet package.
-Which provided a lot of out of the box functionality for reading & writing the RAM of another windows process. Allowing us to effectively interface our tool with the Halo windows processes.
+We ended up getting a little team together, and since all of us were quite new to this, we definitely had our fair share of troubles.
+Like for example, we chose WinForms as our UI framework, as its designed to be relatively simple. But it would actually prove quite difficult to do anything efficiently.
+The drag & drop workflow was hardly functional, making it quite hard to adjust any of the UI components, which was probably why we ended up with a pretty basic UI.
+And not to mention, we got terrible performance with our UI. The tool just ran quite poorly for no particular reason.
 
-It was the first standalone executable program I had worked on, although most of the interface & functionality was designed by team member Cozi. My part was mostly interfacing the tool with the Halo window processes.
-But because of the opportunity to see firsthand how software could be developed, this inspired me to learn more about making software, which has since led me on a pathway to learning numerous programming frameworks and languages.`,},
+However, I didn't have too many technical issues with the UI as my role was more managing the game data & reversal side of things.
+A lot of my role was researching what specific values would do when assigned to the various customization slots, then writing the results down in a spreadsheet, and then handing the data off to our main programmer.
+They would then integrate that data into the tool, converting the values into interactable buttons that users could press and it would automatically send that data off to the running game process and apply the selected cosmetics.
+
+
+The other part of my role was figuring out where the data needed to go, and what kind of data we could send. Like what cosmetics could we modify, and where in the game's RAM we needed to write the cosmetics data to.
+The way I would do this was first finding the area of RAM used by the game to determine which cosmetics you currently had equipped, and then I would play around with the data there by making basically random edits and then checking in game to see if anything notable had changed. If something did change, then I had found a useful piece of data that we could include in our tool.
+
+I started off with looking at what cosmetic data could be manipulated for Halo Reach, but there weren't really many secrets to be discovered there, so we got the core stuff implemented into the tool and then I looked onwards to the other Halo games to find interesting or exciting things.
+With Halo 4, I discovered numerous secret cosmetics, and that I could customize the personal loadouts far beyond what the game would normally let you, like using obscure weapons & skins. And that would end up becoming a pretty big feature of our tool.
+And lastly for Halo 2 Anniversary, I did manage to discover a few interesting things, like unreleased armours & a whole visor colour system that was never completed.
+With each extra game that I researched, our programmer would take the spreadsheets and plug them right into the tool.
+Thanks to the modular system we had with the spreadsheets, we could easily alter or update the data whenever we had either some new data, or if some of the data was incorrect, or even if we'd just made some minor spelling mistakes that required fixing.
+
+
+Prior to this project I had no clue how to even get started with creating standalone programs & executables, but with that little bit of guidance from my friend Cozi (our main programmer), it would really give me that push that I needed to find my passion in software development & building tools that others can use and find enjoyment or convenience out of.`,},
 
 }
 
