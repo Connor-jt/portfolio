@@ -668,7 +668,7 @@ It was a such a huge opportunity for me and I loved almost every moment of it, i
         name: "HPS",
         Date: "2021",
         Basc: "H:MCC Cosmetics Tool",
-        Edit: "Jan 24th 2024",
+        Edit: "Feb 5th 2024",
         Link: [{desc:"project source files", type:"github", url:"https://github.com/COZITIME/HaloPogSwitch"}],
         imgp: "Resources/Examples/HPS/HPS_1.png",
         img1: "Resources/Examples/HPS/HPS_1.png",
