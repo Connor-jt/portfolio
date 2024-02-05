@@ -579,7 +579,7 @@ It was a great opportunity to really understand what it is to be a player, the n
         name: "Megalograph",
         Date: "2021",
         Basc: "Megaloscript Compiler",
-        Edit: "Feb 2nd 2024",
+        Edit: "Feb 5th 2024",
         Link: [{desc:"walkthrough of one of the major versions", type:"youtube", url:"https://www.youtube.com/watch?v=2KovZYexA7w"},
                {desc:"project source files", type:"github", url:"https://github.com/Gamergotten/Megalograph"}],
         imgp: "Resources/Examples/MG/MG_2.png",
@@ -603,8 +603,8 @@ For the language, I really loved the idea of basing it off of Unreal Engine's Bl
 Blueprints is a super user friendly language, its pretty much drag and drop to get it all working, which is fantastic for people who aren't very familiar with the classical text based languages.
 And because its mostly drag and drop, there's little room for syntax errors, which can help clear the frustration for relatively new users having problems with the syntaxing.
 
-By having this blueprints inspired drag and drop node system, it really helped with displaying all these extra bits of context too, like showing you what variables you can use from what types of objects and really just helping show you what you can actually access at any given value slot, where's a classical text based language can only properly support this with very strong auto-completion kind of system.
-The only real downside to this idea was the problem of having to organizing any code you created, or else the code blocks would be very hard to read, and organizing the code can become quite a pain if you didn't quite know what the code was going to look like before you created it.
+By having this blueprints inspired drag and drop node system, it really helped with displaying all these extra bits of context too, like showing you what variables you can use from what types of objects and really just helping show you what you can actually access at any given value slot, where's a classical text based language can only properly support this with a very strong auto-completion kind of system.
+The only real downside to this idea was the problem of having to organizing any code you created, or else the code blocks would be very hard to read, and organizing the code could become quite a pain if you didn't quite know what the code was going to look like before you created it.
 
 To power the research and development, I had designed a modular, intermediate language for parsing the bitpacked data that makes up the Megaloscript files.
 Using the xml file format to provide a quick & easy format, the language would effectively allow me to sort bits & bytes into structured data that Megalograph could read & write, and due to its modularity I could easily apply any adjustments or changes, as well as I could easily share structures between multiple different Megaloscript struct databases.
