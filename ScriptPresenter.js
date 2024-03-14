@@ -26,13 +26,11 @@ function toggle_pause(){
     is_paused = !is_paused;
     let anims_button = document.getElementById("animation_toggle")
     if (is_paused){ // if its now paused, then do the pause stuff
+        anims_button.innerText = "Animations Off"
         // first clear all the entries inside the background
         if (!UI_check()) return;
         while(container.hasChildNodes()) container.removeChild(container.lastChild);
-        // then update toggle button text
-        anims_button.innerText = "Animations Off"
     } else{
-        if (!UI_check()) return;
         anims_button.innerText = "Animations On"
         // if no repos are loaded then we likely got rate limited, let it try again which should inadvertedly disable animations if it fails
         if (repos_loaded.length == 0){
