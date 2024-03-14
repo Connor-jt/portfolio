@@ -36,6 +36,15 @@ function toggle_pause(){
 }
 function unpause(){
 }
+function request_failed_check(request){
+    if (this.status === 403){
+        if (!is_paused) toggle_pause();
+        is_awaiting_response = false; 
+        open_file_text.innerText = "Failed to fetch";
+        open_file_text.removeAttribute("href");
+        throw new Error("HTTP request failed. disabling animations. response: " + this.responseText);
+    }
+}
 
 function load_repos(link){
 
@@ -48,6 +57,8 @@ function load_repos(link){
     request.send();
 }
 function repos_info_loaded() {
+    request_failed_check(this);
+
     for (let repo of JSON.parse(this.responseText))
         if (repo.fork == false)
             repos_loaded.push(repo);
@@ -74,6 +85,7 @@ function get_random_code_file(){
 }
 var open_file_text = null
 function pick_repo_file(){
+    request_failed_check(this);
     let repo_content = JSON.parse(this.responseText);
 
     let valid_files = 0;
@@ -130,6 +142,7 @@ function is_valid_ext(ext){
     return false;
 }
 function handle_file_contents(){
+    request_failed_check(this);
     content_to_write += this.responseText;
     is_awaiting_response = false; 
 }

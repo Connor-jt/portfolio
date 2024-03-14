@@ -311,13 +311,16 @@ function LoadProjects(){
     }
 }
 var Depends = {
+    // development tools
     visual_studio:      { name: "Visual Studio", color: "#cf9af9", alt_color: "#644992", category: "Development Tool",    usage:"Software Development" },
     vs_code:            { name: "VS Code",       color: "#44adf3", alt_color: "#2379b2", category: "Development Tool",    usage:"Web Development" },
+    android_studio:     { name: "Android Studio",color: "#a5cd37", alt_color: "#000000", category: "Development Tool",    usage:"Android Development" },
     unity:              { name: "Unity",         color: "#ffffff", alt_color: "#29333d", category: "Development Tool",    usage:"Game Development" },
     unreal_engine:      { name: "Unreal Engine", color: "#080808", alt_color: "#ffffff", category: "Development Tool",    usage:"Game Development" },
     godot:              { name: "Godot",         color: "#448abb", alt_color: "#000000", category: "Development Tool",    usage:"Game Development" },
     blender:            { name: "Blender",       color: "#eb7a08", alt_color: "#2d5c8b", category: "Development Tool",    usage:"Game Development" },
 
+    // reversal tools
     ghidra:             { name: "Ghidra",        color: "#e22c22", alt_color: "#ffa11f", category: "Reverse Engineering", usage:"Assembly reversal" },
     cheat_engine:       { name: "Cheat Engine",  color: "#086491", alt_color: "#082d3e", category: "Reverse Engineering", usage:"Runtime Memory reversal" },
     x64dbg:             { name: "x64dbg",        color: "#333333", alt_color: "#e40707", category: "Reverse Engineering", usage:"Runtime functionality reversal" },
@@ -328,6 +331,7 @@ var Depends = {
     cpp:                { name: "C++",           color: "#6a9dd3", alt_color: "#084a86", category: "Language",            usage:"Software/Game Development" },
     csharp:             { name: "C#",            color: "#a47edd", alt_color: "#32086f", category: "Language",            usage:"Software/Game Development" },
     javascript:         { name: "Javascript",    color: "#efda4d", alt_color: "#302f33", category: "Language",            usage:"Web Development" },
+    typescript:         { name: "Typescript",    color: "#2d79c7", alt_color: "#000000", category: "Language",            usage:"Web Development" },
     htmlcss:            { name: "Html/CSS",      color: "#f66637", alt_color: "#1b87c7", category: "Language",            usage:"Web Development" },
     python:             { name: "Python",        color: "#fdcd3d", alt_color: "#3474a9", category: "Language",            usage:"Software Development" },
     blueprints:         { name: "Blueprints",    color: "#3660d6", alt_color: "#000000", category: "Language",            usage:"Game Development" },
@@ -335,6 +339,7 @@ var Depends = {
     rust:               { name: "Rust",          color: "#f54900", alt_color: "#000000", category: "Language",            usage:"Web Development" },
     asm:                { name: "Assembly",      color: "#70ac69", alt_color: "#000000", category: "Language",            usage:"Software Development / Reverse engineering" },
     megalo:             { name: "Megaloscript",  color: "#b28d00", alt_color: "#000000", category: "Language",            usage:"Game Development" },
+    kotlin:             { name: "Kotlin",        color: "#d123b2", alt_color: "#000000", category: "Language",            usage:"Andriod Development" },
 
     // frameworks
     opengl:             { name: "OpenGL",        color: "#ffdec4", alt_color: "#000000", category: "Framework",           usage:"Software/Game Development" },
@@ -346,6 +351,7 @@ var Depends = {
     blender_api:        { name: "Blender API",   color: "#eb7a08", alt_color: "#000000", category: "Framework",           usage:"Software/Game Development" },
     gamebar_api:        { name: "Gamebar API",   color: "#107c10", alt_color: "#000000", category: "Framework",           usage:"Software/Game Development" },
     wasm:               { name: "Web Assembly",  color: "#6751f4", alt_color: "#000000", category: "Framework",           usage:"Web Development" },
+    react:              { name: "React",         color: "#61dafb", alt_color: "#000000", category: "Framework",           usage:"Web Development" },
 }
 
 
@@ -408,8 +414,8 @@ As per the primary goal of this project, there was quite a bit to learn about co
         Date: "2023",
         Basc: "Slipspace Mod Tools",
         Edit: "Jan 30th 2024",
-        Link: [{desc:"showcase of asset loading capabilities", type:"youtube", url:"https://www.youtube.com/watch?v=IAZV11uO2vM"},
-               {desc:"demo footage of import assets into the game", type:"youtube", url:"https://www.youtube.com/watch?v=cD979uZTxe8"},
+        Link: [{desc:"asset loading showcase", type:"youtube", url:"https://www.youtube.com/watch?v=IAZV11uO2vM"},
+               {desc:"demo of using the mod tools", type:"youtube", url:"https://www.youtube.com/watch?v=cD979uZTxe8"},
                {desc:"project source files", type:"github", url:"https://github.com/orgs/Codename-Atriox/repositories"}],
         imgp: "Resources/Examples/CA/CA_1.png",
         img1: "Resources/Examples/CA/CA_1.png",
