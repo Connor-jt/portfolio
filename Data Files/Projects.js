@@ -3,7 +3,23 @@
 function init(){
     LoadDepends();
     LoadProjects();
-    // get a random tile and expand it
+    // if a particular project was specified go open that one, otherwise just pick the first one
+    if(window.location.hash) {
+        let hash = decodeURI(window.location.hash.substring(1));
+        // iterate through all projects and find the name that matches the 
+        let index = 0;
+        for (let item_name in Projects){
+            let item = Projects[item_name];
+            index += 1;
+            console.log(item.name);
+            if (item.name == hash){
+                expand_target_item(document.getElementById("projects_list").childNodes[index])
+                return;
+            }
+        }
+        window.location.hash = ""; // clear hash to indicate failure
+    } 
+     
     expand_target_item(document.getElementById("projects_list").firstElementChild); 
 }
 var currently_expanded_item = undefined;
