@@ -5,6 +5,8 @@ function init(){
     LoadProjects();
     // if a particular project was specified go open that one, otherwise just pick the first one
     if(window.location.hash) {
+        if (!is_paused) toggle_pause(); // disable animations if its an explicit link
+
         let hash = decodeURI(window.location.hash.substring(1));
         // iterate through all projects and find the name that matches the 
         let index = 0;
@@ -13,7 +15,7 @@ function init(){
             index += 1;
             console.log(item.name);
             if (item.name == hash){
-                expand_target_item(document.getElementById("projects_list").childNodes[index])
+                expand_target_item(document.getElementById("projects_list").childNodes[index]);
                 return;
             }
         }
