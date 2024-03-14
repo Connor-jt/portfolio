@@ -27,11 +27,12 @@ function toggle_pause(){
     let anims_button = document.getElementById("animation_toggle")
     if (is_paused){ // if its now paused, then do the pause stuff
         // first clear all the entries inside the background
-        if (container == null) return;
+        if (!UI_check()) return;
         while(container.hasChildNodes()) container.removeChild(container.lastChild);
         // then update toggle button text
         anims_button.innerText = "Animations Off"
     } else{
+        if (!UI_check()) return;
         anims_button.innerText = "Animations On"
         // if no repos are loaded then we likely got rate limited, let it try again which should inadvertedly disable animations if it fails
         if (repos_loaded.length == 0){
@@ -172,16 +173,21 @@ function write_loop_loop(){
         write_loop();
 }
 
-function write_loop(){
-    // MAKE SURE UI IS LOADED
+function UI_check(){
     if (open_file_text == null)
         open_file_text = document.getElementById("opendoc_text");
     if (open_file_text == null)
-        return; 
+        return false; 
     if (container  == null || container == undefined)
         container = document.getElementById("code_container");
     if (container  == null || container == undefined)
-        return;
+        return false;
+    return true;
+}
+
+function write_loop(){
+    // MAKE SURE UI IS LOADED
+    if (!UI_check()) return;
 
     if (repos_loaded.length == 0) return; // we cant generate code if no repos are loaded
     if (is_awaiting_response) return; // writing while waiting for a response back from the repos
