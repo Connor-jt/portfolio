@@ -6,14 +6,13 @@ function init(){
     // if a particular project was specified go open that one, otherwise just pick the first one
     if(window.location.hash) {
         if (!is_paused) toggle_pause(); // disable animations if its an explicit link
-
+        
         let hash = decodeURI(window.location.hash.substring(1));
         // iterate through all projects and find the name that matches the 
         let index = 0;
         for (let item_name in Projects){
             let item = Projects[item_name];
             index += 1;
-            console.log(item.name);
             if (item.name == hash){
                 expand_target_item(document.getElementById("projects_list").childNodes[index]);
                 return;
@@ -75,6 +74,7 @@ function expand_target_item(item){
 
     // find the project associated with this tile
     let project = Projects[item.getAttribute("project")];
+    window.location.hash = encodeURI(project.name); // set url hash to newly opened link
 
     document.getElementById("focus_title").innerText = project.name;
     document.getElementById("focus_date").innerText = project.Date;

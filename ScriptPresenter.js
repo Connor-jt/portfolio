@@ -31,21 +31,28 @@ function toggle_pause(){
         while(container.hasChildNodes()) container.removeChild(container.lastChild);
         // then update toggle button text
         anims_button.innerText = "Animations Off"
-    } else
+    } else{
         anims_button.innerText = "Animations On"
-}
-function unpause(){
+        // if no repos are loaded then we likely got rate limited, let it try again which should inadvertedly disable animations if it fails
+        if (repos_loaded.length == 0){
+            load_all_repos();
+        }
+    }
+        
 }
 function request_failed_check(request){
-    if (this.status === 403){
+    if (request.status === 403){
         if (!is_paused) toggle_pause();
         is_awaiting_response = false; 
         open_file_text.innerText = "Failed to fetch";
         open_file_text.removeAttribute("href");
-        throw new Error("HTTP request failed. disabling animations. response: " + this.responseText);
+        throw new Error("HTTP request failed. disabling animations. response: " + request.responseText);
     }
 }
-
+function load_all_repos(){
+    for (let repolink of repo_links)
+        load_repos(repolink);
+}
 function load_repos(link){
 
     let request = new XMLHttpRequest();
@@ -166,13 +173,19 @@ function write_loop_loop(){
 }
 
 function write_loop(){
-    if (repos_loaded.length == 0) return; // we cant generate code if no repos are loaded
-    if (is_awaiting_response) return; // writing while waiting for a response back from the repos
-
+    // MAKE SURE UI IS LOADED
     if (open_file_text == null)
         open_file_text = document.getElementById("opendoc_text");
     if (open_file_text == null)
-        return; // fallback function
+        return; 
+    if (container  == null || container == undefined)
+        container = document.getElementById("code_container");
+    if (container  == null || container == undefined)
+        return;
+
+    if (repos_loaded.length == 0) return; // we cant generate code if no repos are loaded
+    if (is_awaiting_response) return; // writing while waiting for a response back from the repos
+
 
 
     // check whether we need to load a new repo
@@ -190,11 +203,6 @@ function write_loop(){
         return;
     }
 
-    // make sure the container exists
-    if (container  == null || container == undefined)
-        container = document.getElementById("code_container");
-    if (container  == null || container == undefined)
-        return;
 
     // check if we assinged some lines to be removed
     if (lines_to_delete != 0){
