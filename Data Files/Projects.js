@@ -544,7 +544,7 @@ Overall, the project turned out rather well, it surpassed the aim of the project
         name: "Megaloscripting",
         Date: "2022",
         Basc: "H:MCC Megalo Mods",
-        Edit: "Feb 1st 2024",
+        Edit: "Mar 29th 2024",
         Link: [{desc:"channel dedicated to my creations", type:"youtube", url:"https://www.youtube.com/@gamergotten/videos"},
                {desc:"complete collection of source files", type:"github", url:"https://github.com/Gamergotten/RVT-Gametypes"}],
         imgp: "Resources/Examples/MS/MS_1.png",
@@ -559,7 +559,7 @@ My main goal whenever I was working on one of these projects was to bring someth
 
 
 One of the most notable examples was my attempt at a players vs zombies experience, which was originally only designed to test how interesting the AI (zombies) could be. But with how well the results turned out, I just had to turn this into a fully featured experience.
-And as it would turn out the general Halo community also loved the idea, as it would bring a lot of awesome things had never really been in a halo game before. 
+And as it would turn out the general Halo community also loved the idea, as it would bring a lot of awesome things that had never really been in a halo game before. 
 
 With the huge community interest, the project turned out really well and with loads of extra requested features (objectives, AI customization, currency systems, etc).
 With so many requests & features, users could completely customize how the experience played, what the objectives were, how easy it was and so on, even customizing the player death mechanic in various ways, and coupled with the game's forge feature, it really allowed users to create their own unique experience using this mod.
