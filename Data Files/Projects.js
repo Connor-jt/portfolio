@@ -460,7 +460,7 @@ For the most part, this was an interesting project to take on, as most of the re
         name: "Javasqiggle",
         Date: "2023",
         Basc: "Multiplayer Web Game",
-        Edit: "Jan 30th 2024",
+        Edit: "Mar 29th 2024",
         Link: [{desc:"general showcase footage", type:"youtube", url:"https://www.youtube.com/watch?v=ETITCZBJEp8"},
             {desc:"project source files", type:"github", url:"https://github.com/Connor-jt/JavaSqiggle"}],
         imgp: "Resources/Examples/JS/JS_1.png",
@@ -493,7 +493,7 @@ However, the user hosting the game always has the option to pause/unpause the ga
 The server's console also has a bunch of other useful commands & functionalities, such as "pause", "action_time" or the "help" command to display all possible commands.
 
 
-The website itself is open sourced and utilizes Github's pages feature for publish hosting, allowing anyone to use the link to access the game.
+The website itself is open sourced and utilizes Github's pages feature for public hosting, allowing anyone to use the link to access the game.
 
 Surprisingly, this project managed to reach a feature complete & bug free state, pretty much nailing the concept.
 And as per the goal of this project, it greatly helped with developing my JavaScript and other web related skills, which will (and already have) come to great use in the future.`,},
