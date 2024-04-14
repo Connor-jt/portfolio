@@ -163,20 +163,27 @@ function minimize_item(item){
     item.removeAttribute("style"); // this will clear the forced selected visual effect
     currently_expanded_item = undefined;
 }
+var image_index = 0;
 function select_image1(force_set){
-    select_image("focus_img1", "focus_frame1", force_set);
+    image_index = 0;
+    load_selected_image_index(force_set);
 }
 function select_image2(force_set){
-    select_image("focus_img2", "focus_frame2", force_set);
+    image_index = 1;
+    load_selected_image_index(force_set);
 }
 function select_image3(force_set){
-    select_image("focus_img3", "focus_frame3", force_set);
+    image_index = 2;
+    load_selected_image_index(force_set);
 }
 function select_fullscreen(){
-    let focus_imgF = document.getElementById("focus_imgF");
     let fullscreen_panel = document.getElementById("fullscreen_img_border");
     fullscreen_panel.style.visibility = "visible";
     fullscreen_panel.className = "fullscreen";
+    change_fullscreen();
+}
+function change_fullscreen(){
+    let focus_imgF = document.getElementById("focus_imgF");
     document.getElementById("fullscreen_img").src = focus_imgF.src;
 }
 function escape_fullscreen(){ // either by clicking or esc?
@@ -185,6 +192,34 @@ function escape_fullscreen(){ // either by clicking or esc?
     fullscreen_panel.className = "fullscreen fullscreen_shrink";
     document.getElementById("fullscreen_img").src = "";
 }
+function next_image(e){
+    e.stopPropagation();
+    image_index += 1;
+    if (image_index > 2){
+        image_index = 0;
+    }
+    load_selected_image_index(false);
+    change_fullscreen();
+}
+function prev_image(e){
+    e.stopPropagation();
+    image_index -= 1;
+    if (image_index < 0){
+        image_index = 2;
+    }
+    load_selected_image_index(false);
+    change_fullscreen();
+}
+function load_selected_image_index(force_set){
+    if (image_index == 0){
+        select_image("focus_img1", "focus_frame1", force_set);
+    } else if (image_index == 1){
+        select_image("focus_img2", "focus_frame2", force_set);
+    } else if (image_index == 2){
+        select_image("focus_img3", "focus_frame3", force_set);
+    }
+}
+
 
 var last_selected_frame = undefined;
 function select_image(image_id, frame, force_set){

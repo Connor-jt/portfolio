@@ -26,6 +26,15 @@ body.light-mode{
 ::-webkit-scrollbar {
     width: 10px;
 }
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }
   
 /* Track */
 ::-webkit-scrollbar-track {
@@ -390,6 +399,35 @@ body.light-mode{
     height: 15px;
     margin-right: 5px;
     vertical-align: middle;
+}
+.c_i_i_f_img_navigate{
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    top: 50%;
+    transform: translateX(0%) translateY(-50%);
+    text-align: center;
+    color: white;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    background-color: transparent;
+    transition: background-color 150ms linear;
+}
+.c_i_i_f_img_navigate:hover {
+    background-color: #80808050;
+}
+.c_i_i_f_img_navigate:active {
+    background-color: #80808070;
+}
+
+.fullscreen_left{
+    left: 40px;
+}
+.fullscreen_right{
+    right: 40px;
 }
 
 /* ///////////// //
