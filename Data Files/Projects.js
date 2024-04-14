@@ -400,7 +400,7 @@ var Projects ={
     example10: {
         name: "Rust Engine",
         Date: "2024",
-        Basc: "Asm86-64 Reading Tool",
+        Basc: "Asm86 Reading Tool",
         Edit: "Jan 24th 2024",
         Link: [{desc:"basic video showcase", type:"youtube", url:"https://www.youtube.com/watch?v=MC_tofnZsRo"},
                {desc:"project source files", type:"github", url:"https://github.com/Connor-jt/wasm-engine"}],
@@ -449,7 +449,7 @@ As per the primary goal of this project, there was quite a bit to learn about co
     example3: {
         name: "Codename Atriox",
         Date: "2023",
-        Basc: "Slipspace Mod Tools",
+        Basc: "Content Creation Tools",
         Edit: "Jan 30th 2024",
         Link: [{desc:"asset loading showcase", type:"youtube", url:"https://www.youtube.com/watch?v=IAZV11uO2vM"},
                {desc:"demo of using the mod tools", type:"youtube", url:"https://www.youtube.com/watch?v=cD979uZTxe8"},
@@ -540,7 +540,7 @@ And as per the goal of this project, it greatly helped with developing my JavaSc
     example4: {
         name: "UE5 Voxels",
         Date: "2022",
-        Basc: "Proc Gen Project",
+        Basc: "Map Generation",
         Edit: "Jan 30th 2024",
         Link: [{desc:"in-engine gameplay", type:"youtube", url:"https://www.youtube.com/watch?v=iddGwBH25kE"},
                {desc:"animation of the voxels algorithm", type:"youtube", url:"https://www.youtube.com/watch?v=aL0p8CMEh3g"},],

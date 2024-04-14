@@ -413,6 +413,7 @@ body.light-mode{
     justify-content: center;
     align-items: center;
     font-size: 50px;
+    border-radius: 5px;
     background-color: transparent;
     transition: background-color 150ms linear;
 }
