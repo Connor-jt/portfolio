@@ -420,8 +420,14 @@ body.light-mode{
 .c_i_i_f_img_navigate:hover {
     background-color: #80808050;
 }
+.light-mode .c_i_i_f_img_navigate:hover{
+    background-color: #30303050;
+}
 .c_i_i_f_img_navigate:active {
     background-color: #80808070;
+}
+.light-mode .c_i_i_f_img_navigate:active{
+    background-color: #30303070;
 }
 
 .fullscreen_left{
