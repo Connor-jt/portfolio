@@ -447,9 +447,9 @@ As per the primary goal of this project, there was quite a bit to learn about co
     // 2023 HIGHLIGHTS //
     // ////////////// //
     example3: {
-        name: "Codename Atriox",
+        name: "Project Atriox",
         Date: "2023",
-        Basc: "Content Creation Tools",
+        Basc: "H:Infinite Dev Tools",
         Edit: "Jan 30th 2024",
         Link: [{desc:"asset loading showcase", type:"youtube", url:"https://www.youtube.com/watch?v=IAZV11uO2vM"},
                {desc:"demo of using the mod tools", type:"youtube", url:"https://www.youtube.com/watch?v=cD979uZTxe8"},
@@ -540,7 +540,7 @@ And as per the goal of this project, it greatly helped with developing my JavaSc
     example4: {
         name: "UE5 Voxels",
         Date: "2022",
-        Basc: "Map Generation",
+        Basc: "UE5 Map Generator",
         Edit: "Jan 30th 2024",
         Link: [{desc:"in-engine gameplay", type:"youtube", url:"https://www.youtube.com/watch?v=iddGwBH25kE"},
                {desc:"animation of the voxels algorithm", type:"youtube", url:"https://www.youtube.com/watch?v=aL0p8CMEh3g"},],
