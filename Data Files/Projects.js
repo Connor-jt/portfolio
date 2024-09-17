@@ -397,6 +397,33 @@ var Projects ={
     // //////////////// //
     // 2024 HIGHLIGHTS //
     // ////////////// //
+    example12: {
+        name: "3D & Design",
+        Date: "2024",
+        Basc: "Art projects",
+        Edit: "---",
+        Link: [{desc:"placeholder showcase link", type:"youtube", url:"https://www.youtube.com/@gamergotten/videos"}],
+        imgp: "Resources/black.png",
+        img1: "Resources/black.png",
+        img2: "Resources/black.png",
+        img3: "Resources/black.png",
+        deps: ["vs_code","megalo"],
+        Desc: 
+`PLACEHOLDER. IN PROGRESS.`},
+    example11: {
+        name: "Megaloscript pt2",
+        Date: "2024",
+        Basc: "more megaloscripting",
+        Edit: "---",
+        Link: [{desc:"channel dedicated to my creations", type:"youtube", url:"https://www.youtube.com/@gamergotten/videos"},
+               {desc:"complete collection of source files", type:"github", url:"https://github.com/Gamergotten/RVT-Gametypes"}],
+        imgp: "Resources/Examples/MS_pt2/MS_1.png",
+        img1: "Resources/Examples/MS_pt2/MS_1.png",
+        img2: "Resources/Examples/MS_pt2/MS_2.png",
+        img3: "Resources/Examples/MS_pt2/MS_3.png",
+        deps: ["vs_code","megalo"],
+        Desc: 
+`PLACEHOLDER. IN PROGRESS.`},
     example10: {
         name: "Rust Engine",
         Date: "2024",
