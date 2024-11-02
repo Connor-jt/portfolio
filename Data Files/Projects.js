@@ -397,6 +397,20 @@ var Projects ={
     // //////////////// //
     // 2024 HIGHLIGHTS //
     // ////////////// //
+    example13: {
+        name: "Easy Workshop",
+        Date: "2024",
+        Basc: "Steam Workshop client",
+        Edit: "---",
+        Link: [{desc:"video demo", type:"youtube", url:"https://youtu.be/9RZHpTPrThU"},
+               {desc:"project source files", type:"github", url:"https://github.com/Connor-jt/Easyworkshop"}],
+        imgp: "Resources/Examples/WS/WS_2.png",
+        img1: "Resources/Examples/WS/WS_2.png",
+        img2: "Resources/Examples/WS/WS_1.png",
+        img3: "Resources/Examples/WS/WS_3.png",
+        deps: ["vs_code","htmlcss","javascript"],
+        Desc: 
+`PLACEHOLDER. IN PROGRESS.`},
     example11: {
         name: "Megaloscripting",
         Date: "2024",
